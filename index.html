@@ -4,12 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SlowRead — In a fast world, slowly read a good book</title>
-  <meta name="description" content="Daily passages from classic literature. Build your reading streak and rediscover timeless books.">
+  <meta name="description" content="Daily passages from classic literature. Build your reading streak, rediscover timeless books, and make deep reading a daily habit.">
+  <meta property="og:title" content="SlowRead — Slow down. Read deeply.">
+  <meta property="og:description" content="Five minutes a day with the greatest books ever written. Build your streak, build your mind.">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <header class="site-header">
+  <!-- ===== Header ===== -->
+  <header class="site-header" id="header">
     <div class="container">
       <a href="./" class="logo">SlowRead</a>
       <nav>
@@ -25,9 +29,246 @@
   </header>
 
   <main>
+
+    <!-- ===== Hero ===== -->
     <section class="hero container">
-      <h1>SlowRead</h1>
+      <p class="hero-eyebrow">A reading companion for the unhurried</p>
+      <h1>Slow down.<br>Read deeply.</h1>
       <p class="tagline">In a fast world, slowly read a good book.</p>
+      <p class="hero-description">Five minutes each morning with Tolstoy, Austen, or Lao Tzu. One curated passage a day &mdash; enough to think about, not enough to overwhelm. Build a reading streak and rediscover what great literature feels like.</p>
+      <div class="store-buttons">
+        <a href="#" class="store-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          App Store
+        </a>
+        <a href="#" class="store-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67L14.25 12.6 3.18.33c-.19.17-.18.49-.18.86v21.62c0 .37-.01.69.18.86zm1.81 1.07l12.7-7.13-2.84-2.84L4.99 24.74zM4.99-.93l9.86 9.97 2.84-2.84L4.99-.93zm15.03 7.69l-3.5 1.97 3.14 3.14 3.14-1.77c.98-.55.98-1.44 0-1.99l-2.78-1.35z"/></svg>
+          Google Play
+        </a>
+      </div>
+      <div class="scroll-hint">
+        <span>Discover more</span>
+        <div class="scroll-hint-line"></div>
+      </div>
+    </section>
+
+    <!-- ===== Manifesto ===== -->
+    <div class="divider" aria-hidden="true">&middot;</div>
+
+    <section class="manifesto container reveal">
+      <p class="manifesto-text">
+        We scroll through hundreds of posts a day, yet struggle to finish a single book a year.
+        We&rsquo;ve lost the art of <strong>sitting still with words</strong>.
+        SlowRead is built on a simple belief: <em>a little reading, done consistently, changes everything</em>.
+        Not speed-reading. Not summaries. Just you, a passage, and the quiet space to think.
+      </p>
+    </section>
+
+    <!-- ===== How It Works ===== -->
+    <div class="divider" aria-hidden="true">&middot;</div>
+
+    <section class="how-it-works container">
+      <p class="section-label reveal">How it works</p>
+      <h2 class="section-title reveal">Your daily reading ritual in three steps</h2>
+      <div class="steps">
+        <div class="step reveal reveal-delay-1">
+          <span class="step-number">Step 01</span>
+          <div class="step-icon">&#9782;</div>
+          <h3>Pick a Classic</h3>
+          <p>Browse our curated library of public domain masterpieces &mdash; from East to West, ancient to modern.</p>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <span class="step-number">Step 02</span>
+          <div class="step-icon">&#9881;</div>
+          <h3>Read Your Passage</h3>
+          <p>Each day, a perfectly-sized passage awaits. Five quiet minutes &mdash; on the train, with coffee, before bed.</p>
+        </div>
+        <div class="step reveal reveal-delay-3">
+          <span class="step-number">Step 03</span>
+          <div class="step-icon">&#10047;</div>
+          <h3>Build Your Streak</h3>
+          <p>Day after day, your streak grows. Watch yourself transform from "I should read more" to "I am a reader."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Reading Preview ===== -->
+    <div class="divider" aria-hidden="true">&middot;</div>
+
+    <section class="reading-preview container">
+      <p class="section-label reveal">The reading experience</p>
+      <h2 class="section-title reveal">What your mornings could look like</h2>
+      <div class="book-card reveal">
+        <div class="book-card-header">
+          <span class="book-card-meta">Today's passage</span>
+          <span class="book-card-day">Day 42</span>
+        </div>
+        <h3 class="book-card-title">Pride and Prejudice</h3>
+        <p class="book-card-author">Jane Austen</p>
+        <p class="book-card-passage">It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife. However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered as the rightful property of some one or other of their daughters.</p>
+        <div class="book-card-footer">
+          <div class="book-card-progress">
+            <span>Chapter 1 &middot; 35%</span>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+          </div>
+          <span class="book-card-action">Continue &rarr;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Streak ===== -->
+    <div class="divider" aria-hidden="true">&middot;</div>
+
+    <section class="streak-section container">
+      <div class="streak-content">
+        <div class="streak-text reveal">
+          <h2>Small habit,<br>great transformation</h2>
+          <p>A reading streak isn't about pressure &mdash; it's about momentum. Each day you read, you add one more drop of ink to the story of who you're becoming.</p>
+          <p>Miss a day? No guilt. Just pick up where you left off. The book will wait for you.</p>
+        </div>
+        <div class="streak-visual reveal reveal-delay-2">
+          <span class="streak-counter">42</span>
+          <span class="streak-counter-label">day streak</span>
+          <div class="streak-grid">
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled"></div>
+            <div class="streak-dot filled today"></div>
+          </div>
+          <div class="streak-week-labels">
+            <span class="streak-week-label">M</span>
+            <span class="streak-week-label">T</span>
+            <span class="streak-week-label">W</span>
+            <span class="streak-week-label">T</span>
+            <span class="streak-week-label">F</span>
+            <span class="streak-week-label">S</span>
+            <span class="streak-week-label">S</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Library ===== -->
+    <div class="divider" aria-hidden="true">&middot;</div>
+
+    <section class="library-section container">
+      <p class="section-label reveal">The library</p>
+      <h2 class="section-title reveal">Great books from every corner of the world</h2>
+      <div class="library-grid">
+        <div class="library-card reveal reveal-delay-1">
+          <span class="library-card-genre">Novel</span>
+          <h3>Pride and Prejudice</h3>
+          <p class="author">Jane Austen</p>
+          <p>&ldquo;I could easily forgive his pride, if he had not mortified mine.&rdquo;</p>
+        </div>
+        <div class="library-card reveal reveal-delay-2">
+          <span class="library-card-genre">Philosophy</span>
+          <h3>Meditations</h3>
+          <p class="author">Marcus Aurelius</p>
+          <p>&ldquo;The happiness of your life depends upon the quality of your thoughts.&rdquo;</p>
+        </div>
+        <div class="library-card reveal reveal-delay-3">
+          <span class="library-card-genre">Classic</span>
+          <h3>Dream of the Red Chamber</h3>
+          <p class="author">Cao Xueqin</p>
+          <p>&ldquo;Truth becomes fiction when the fiction's true; Real becomes not-real where the unreal's real.&rdquo;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Quote ===== -->
+    <section class="quote-section container reveal">
+      <blockquote>A reader lives a thousand lives before he dies. The man who never reads lives only one.</blockquote>
+      <p class="quote-attribution">&mdash; George R.R. Martin</p>
+    </section>
+
+    <!-- ===== Features ===== -->
+    <section class="features container-wide">
+      <p class="section-label reveal">Why SlowRead</p>
+      <h2 class="section-title reveal">Designed for readers, not consumers</h2>
+      <div class="features-grid">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon feature-icon-book" aria-hidden="true">&#9782;</div>
+          <h3>Bite-sized Passages</h3>
+          <p>Perfectly portioned daily readings. No 300-page commitments &mdash; just five meaningful minutes.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon feature-icon-streak" aria-hidden="true">&#10047;</div>
+          <h3>Streak &amp; Milestones</h3>
+          <p>Track your reading habit with streaks, celebrate milestones, and watch your literary journey unfold.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon feature-icon-library" aria-hidden="true">&#9776;</div>
+          <h3>Curated Library</h3>
+          <p>Hand-picked public domain classics from every culture. New books added regularly.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon feature-icon-notify" aria-hidden="true">&#9883;</div>
+          <h3>Gentle Reminders</h3>
+          <p>A quiet daily nudge, not a noisy notification. Your book is ready whenever you are.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon feature-icon-offline" aria-hidden="true">&#9729;</div>
+          <h3>Beautiful Typography</h3>
+          <p>Ink on paper textures, carefully chosen serif fonts, and layouts that honor the written word.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon feature-icon-free" aria-hidden="true">&#10084;</div>
+          <h3>Free &amp; Respectful</h3>
+          <p>No ads. No paywalls for public domain books. No tracking beyond what serves your reading.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Final CTA ===== -->
+    <div class="divider" aria-hidden="true">&middot;</div>
+
+    <section class="final-cta container reveal">
+      <h2>Your next chapter<br>starts today</h2>
+      <p>Join thousands of readers who've rediscovered the joy of reading, one passage at a time.</p>
       <div class="store-buttons">
         <a href="#" class="store-btn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -40,27 +281,9 @@
       </div>
     </section>
 
-    <section class="features container">
-      <div class="features-grid">
-        <div class="feature-card">
-          <span class="feature-icon" aria-hidden="true">&#9782;</span>
-          <h3>Daily Reading</h3>
-          <p>One curated passage each day from the greatest works of literature. No rush, no pressure.</p>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon" aria-hidden="true">&#9733;</span>
-          <h3>Reading Streaks</h3>
-          <p>Build your streak day by day. Stay motivated and make reading a lasting habit.</p>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon" aria-hidden="true">&#9776;</span>
-          <h3>Classic Library</h3>
-          <p>Access a growing collection of public domain classics from around the world.</p>
-        </div>
-      </div>
-    </section>
   </main>
 
+  <!-- ===== Footer ===== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-content">
@@ -73,6 +296,26 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===== Scripts ===== -->
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Header shadow on scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  </script>
 
 </body>
 </html>
