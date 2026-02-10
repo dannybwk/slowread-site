@@ -1,0 +1,330 @@
+/* ============================================
+   SlowRead Landing Page — Ink Theme
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Literata:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+TC:wght@400;600;700&display=swap');
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-paper: #F5F0E8;
+  --bg-dark: #1C1916;
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B6560;
+  --accent-red: #C23B22;
+  --accent-jade: #2D7D6E;
+  --font-serif: 'Literata', 'Noto Serif TC', 'Georgia', serif;
+  --font-mono: 'IBM Plex Mono', 'Menlo', monospace;
+  --max-width: 800px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 5rem;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  background-color: var(--bg-paper);
+  background-image: url('../images/paper-texture.png');
+  background-repeat: repeat;
+  background-size: 400px;
+  line-height: 1.8;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent-red);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-sm);
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+}
+
+.nav-links a:hover {
+  color: var(--accent-red);
+  opacity: 1;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+}
+
+.hero h1 {
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.hero .tagline {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: var(--spacing-lg);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Store Buttons ---------- */
+.store-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--text-primary);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  transition: all 0.2s;
+}
+
+.store-btn:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-paper);
+  opacity: 1;
+}
+
+.store-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- Features ---------- */
+.features {
+  padding: var(--spacing-xl) 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.feature-card {
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.feature-card h3 {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-primary);
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid rgba(26, 26, 26, 0.1);
+  padding: var(--spacing-md) 0;
+  margin-top: var(--spacing-xl);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--spacing-sm);
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+}
+
+.footer-links a:hover {
+  color: var(--accent-red);
+  opacity: 1;
+}
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* ---------- Legal Pages (Privacy / Terms) ---------- */
+.legal {
+  padding: var(--spacing-lg) 0;
+}
+
+.legal h1 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.legal .last-updated {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.legal h2 {
+  font-size: 1.25rem;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.legal p,
+.legal ul {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.95rem;
+}
+
+.legal ul {
+  padding-left: 1.5rem;
+}
+
+.legal li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.legal a {
+  color: var(--accent-red);
+}
+
+/* ---------- Language Switcher ---------- */
+.lang-switch {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.lang-switch a {
+  color: var(--text-secondary);
+}
+
+.lang-switch .active {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero .tagline {
+    font-size: 1.05rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .site-header .container {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+}
