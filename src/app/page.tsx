@@ -7,11 +7,22 @@ export const metadata: Metadata = {
   title: 'SlowRead — In a fast world, slowly read a good book',
   description:
     'Daily passages from classic literature with AI-powered reading companion. Bilingual reading, smart scheduling, and reading streaks. Free to start.',
+  alternates: {
+    canonical: 'https://slowread.xyz',
+    languages: { 'zh-Hant': 'https://slowread.xyz/zh' },
+  },
   openGraph: {
     title: 'SlowRead — Slow down. Read deeply.',
     description:
       'Five minutes a day with the greatest books ever written. AI companion, bilingual reading, and habit-building streaks.',
+    url: 'https://slowread.xyz',
     type: 'website',
+    images: [{ url: '/images/og-image.png', width: 1200, height: 630, alt: 'SlowRead — Daily classic literature reading' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SlowRead — Slow down. Read deeply.',
+    description: 'Five minutes a day with the greatest books ever written.',
   },
 };
 
@@ -56,9 +67,75 @@ function StreakGrid() {
   );
 }
 
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'SlowRead',
+    url: 'https://slowread.xyz',
+    logo: 'https://slowread.xyz/images/logo.png',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'MobileApplication',
+    name: 'SlowRead',
+    operatingSystem: 'iOS, Android',
+    applicationCategory: 'EducationApplication',
+    description:
+      'Daily passages from classic literature with AI-powered reading companion. Bilingual reading, smart scheduling, and reading streaks.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is SlowRead?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'SlowRead is a mobile reading app that delivers daily passages from public domain literary classics. It combines AI-powered reading companions with bilingual reading, smart scheduling, and reading streaks.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is SlowRead free?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, SlowRead is free to download and use. The free plan includes one passage per day, the full public domain library, reading streaks, personalized schedule, basic bilingual mode, and daily reminders. A Pro plan at $4.99/month unlocks AI companion, unlimited reading, and more.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What books are available on SlowRead?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'SlowRead offers a curated library of public domain classics from around the world — from Pride and Prejudice and Meditations to Dream of the Red Chamber and Tao Te Ching. Every book is hand-verified for copyright and carefully formatted.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does SlowRead support multiple languages?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. SlowRead supports bilingual side-by-side reading, letting you read classics in their original language with a translation, or read foreign classics in your own tongue. All major world languages are supported.',
+        },
+      },
+    ],
+  },
+];
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header lang="en" />
       <ScrollReveal />
 

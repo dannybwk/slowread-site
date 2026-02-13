@@ -3,8 +3,19 @@ import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — SlowRead',
+  title: 'Terms of Service',
   description: 'SlowRead Terms of Service. Please read these terms carefully before using the App.',
+  alternates: {
+    canonical: 'https://slowread.xyz/terms',
+    languages: { 'zh-Hant': 'https://slowread.xyz/zh/terms' },
+  },
+  openGraph: {
+    title: 'Terms of Service — SlowRead',
+    description: 'SlowRead Terms of Service. Please read these terms carefully before using the App.',
+    url: 'https://slowread.xyz/terms',
+    images: [{ url: '/images/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary' },
 };
 
 export default function TermsPage() {

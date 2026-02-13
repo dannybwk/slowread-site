@@ -7,11 +7,23 @@ export const metadata: Metadata = {
   title: 'SlowRead 慢讀經典 — 在快的世界裡，慢慢讀一本好書',
   description:
     '每日一段經典文學選讀，AI 伴讀助手、雙語對照閱讀、智慧排程，讓深度閱讀成為日常習慣。免費開始。',
+  alternates: {
+    canonical: 'https://slowread.xyz/zh',
+    languages: { en: 'https://slowread.xyz' },
+  },
   openGraph: {
     title: 'SlowRead 慢讀經典 — 慢下來，深深地讀',
     description:
       '每天五分鐘，與最偉大的文學作品相遇。AI 伴讀、雙語模式、閱讀連續紀錄。',
+    url: 'https://slowread.xyz/zh',
     type: 'website',
+    locale: 'zh_TW',
+    images: [{ url: '/images/og-image.png', width: 1200, height: 630, alt: 'SlowRead 慢讀經典 — 每日經典文學閱讀' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SlowRead 慢讀經典 — 慢下來，深深地讀',
+    description: '每天五分鐘，與最偉大的文學作品相遇。',
   },
 };
 
@@ -56,9 +68,75 @@ function StreakGrid() {
   );
 }
 
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'SlowRead 慢讀經典',
+    url: 'https://slowread.xyz',
+    logo: 'https://slowread.xyz/images/logo.png',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'MobileApplication',
+    name: 'SlowRead 慢讀經典',
+    operatingSystem: 'iOS, Android',
+    applicationCategory: 'EducationApplication',
+    description:
+      '每日一段經典文學選讀，AI 伴讀助手、雙語對照閱讀、智慧排程，讓深度閱讀成為日常習慣。',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: '什麼是 SlowRead 慢讀經典？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'SlowRead 慢讀經典是一款行動閱讀 App，每天推送一段公版經典文學選讀。結合 AI 伴讀助手、雙語對照閱讀、智慧排程與閱讀連續紀錄，讓深度閱讀成為你的日常。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'SlowRead 是免費的嗎？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '是的，SlowRead 免費下載使用。免費版包含每日一段閱讀、完整公版書庫、閱讀連續紀錄、個人化排程、基本雙語模式和每日提醒。Pro 進階版每月 $4.99，解鎖 AI 伴讀、無限閱讀等功能。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'SlowRead 有哪些書？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'SlowRead 提供來自世界各地的公版經典文學——從《紅樓夢》、《道德經》到《傲慢與偏見》、《沉思錄》。每本書都經過人工版權確認與精心排版。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'SlowRead 支援多語言嗎？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '支援。SlowRead 提供雙語並排閱讀功能，可以用原文搭配翻譯閱讀經典，或用你的母語讀外國文學。支援全球主要語系。',
+        },
+      },
+    ],
+  },
+];
+
 export default function ZhHomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header lang="zh" />
       <ScrollReveal />
 

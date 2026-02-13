@@ -3,8 +3,20 @@ import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 
 export const metadata: Metadata = {
-  title: '隱私權政策 — SlowRead 慢讀經典',
+  title: '隱私權政策',
   description: 'SlowRead 慢讀經典隱私權政策，了解我們如何蒐集、使用及保護您的資料。',
+  alternates: {
+    canonical: 'https://slowread.xyz/zh/privacy',
+    languages: { en: 'https://slowread.xyz/privacy' },
+  },
+  openGraph: {
+    title: '隱私權政策 — SlowRead 慢讀經典',
+    description: '了解 SlowRead 慢讀經典如何蒐集、使用及保護您的資料。',
+    url: 'https://slowread.xyz/zh/privacy',
+    locale: 'zh_TW',
+    images: [{ url: '/images/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary' },
 };
 
 export default function ZhPrivacyPage() {

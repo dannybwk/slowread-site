@@ -7,6 +7,7 @@ import '@/styles/admin.css';
 
 export const metadata = {
   title: 'Admin — SlowRead',
+  robots: { index: false, follow: false },
 };
 
 export default async function AdminLayout({

@@ -3,8 +3,19 @@ import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — SlowRead',
+  title: 'Privacy Policy',
   description: 'SlowRead Privacy Policy. Learn how we collect, use, and protect your data.',
+  alternates: {
+    canonical: 'https://slowread.xyz/privacy',
+    languages: { 'zh-Hant': 'https://slowread.xyz/zh/privacy' },
+  },
+  openGraph: {
+    title: 'Privacy Policy — SlowRead',
+    description: 'Learn how SlowRead collects, uses, and protects your data.',
+    url: 'https://slowread.xyz/privacy',
+    images: [{ url: '/images/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary' },
 };
 
 export default function PrivacyPage() {
