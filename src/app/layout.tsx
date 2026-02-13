@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Literata, IBM_Plex_Mono, Noto_Serif_TC } from 'next/font/google';
 import '@/styles/globals.css';
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
+import FacebookPixel from '@/components/analytics/FacebookPixel';
 
 const literata = Literata({
   subsets: ['latin'],
@@ -59,7 +61,11 @@ export default function RootLayout({
       lang="en"
       className={`${literata.variable} ${ibmPlexMono.variable} ${notoSerifTC.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <GoogleAnalytics />
+        <FacebookPixel />
+        {children}
+      </body>
     </html>
   );
 }
