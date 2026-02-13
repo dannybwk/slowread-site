@@ -6,28 +6,34 @@ export async function GET() {
   const authError = await requireAdmin();
   if (authError) return authError;
 
-  const [overall, byCardType] = await Promise.all([
-    getSupabaseAdmin().rpc('exec_sql', {
-      query: `
-        SELECT
-          COUNT(*) FILTER (WHERE NOT cache_hit)::int AS generations,
-          COUNT(*) FILTER (WHERE cache_hit)::int AS cache_hits,
-          COALESCE(SUM(total_cost_usd), 0)::numeric(10,4) AS total_cost
-        FROM ai_generation_log
-      `,
-    }).then(r => r.data?.[0] ?? { generations: 0, cache_hits: 0, total_cost: 0 }),
+  const { data: rows, error } = await getSupabaseAdmin()
+    .from('ai_generation_log')
+    .select('cache_hit, total_cost_usd, card_type');
 
-    getSupabaseAdmin().rpc('exec_sql', {
-      query: `
-        SELECT card_type,
-               COUNT(*)::int AS generations,
-               COALESCE(SUM(total_cost_usd), 0)::numeric(10,4) AS cost
-        FROM ai_generation_log
-        WHERE NOT cache_hit
-        GROUP BY card_type
-      `,
-    }).then(r => r.data ?? []),
-  ]);
+  if (error) {
+    console.error('[admin/ai]', error.message);
+    return NextResponse.json({ error: 'Failed to fetch AI data' }, { status: 500 });
+  }
+
+  const all = rows ?? [];
+  const generations = all.filter((r) => !r.cache_hit).length;
+  const cache_hits = all.filter((r) => r.cache_hit).length;
+  const total_cost = all.reduce((sum, r) => sum + (r.total_cost_usd ?? 0), 0);
+  const overall = { generations, cache_hits, total_cost: Number(total_cost.toFixed(4)) };
+
+  // Group non-cached by card_type
+  const typeMap: Record<string, { generations: number; cost: number }> = {};
+  for (const r of all.filter((r) => !r.cache_hit)) {
+    const t = r.card_type ?? 'unknown';
+    if (!typeMap[t]) typeMap[t] = { generations: 0, cost: 0 };
+    typeMap[t].generations += 1;
+    typeMap[t].cost += r.total_cost_usd ?? 0;
+  }
+  const byCardType = Object.entries(typeMap).map(([card_type, v]) => ({
+    card_type,
+    generations: v.generations,
+    cost: Number(v.cost.toFixed(4)),
+  }));
 
   return NextResponse.json({ overall, byCardType });
 }

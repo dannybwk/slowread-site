@@ -6,29 +6,34 @@ export async function GET() {
   const authError = await requireAdmin();
   if (authError) return authError;
 
-  const [byStatus, byPlatform, byProduct] = await Promise.all([
-    getSupabaseAdmin().rpc('exec_sql', {
-      query: `SELECT status, COUNT(*)::int AS count FROM subscriptions GROUP BY status`,
-    }).then(r => r.data ?? []),
+  const { data: subs } = await getSupabaseAdmin()
+    .from('subscriptions')
+    .select('status, platform, product_id');
 
-    getSupabaseAdmin().rpc('exec_sql', {
-      query: `
-        SELECT platform, COUNT(*)::int AS count
-        FROM subscriptions
-        WHERE status IN ('active','trial','grace_period')
-        GROUP BY platform
-      `,
-    }).then(r => r.data ?? []),
+  const rows = subs ?? [];
 
-    getSupabaseAdmin().rpc('exec_sql', {
-      query: `
-        SELECT product_id, COUNT(*)::int AS count
-        FROM subscriptions
-        WHERE status IN ('active','trial','grace_period')
-        GROUP BY product_id
-      `,
-    }).then(r => r.data ?? []),
-  ]);
+  // Group by status
+  const statusMap: Record<string, number> = {};
+  for (const s of rows) {
+    statusMap[s.status] = (statusMap[s.status] ?? 0) + 1;
+  }
+  const byStatus = Object.entries(statusMap).map(([status, count]) => ({ status, count }));
+
+  // Group active subs by platform
+  const active = rows.filter((s) => ['active', 'trial', 'grace_period'].includes(s.status));
+
+  const platformMap: Record<string, number> = {};
+  for (const s of active) {
+    platformMap[s.platform] = (platformMap[s.platform] ?? 0) + 1;
+  }
+  const byPlatform = Object.entries(platformMap).map(([platform, count]) => ({ platform, count }));
+
+  // Group active subs by product
+  const productMap: Record<string, number> = {};
+  for (const s of active) {
+    productMap[s.product_id] = (productMap[s.product_id] ?? 0) + 1;
+  }
+  const byProduct = Object.entries(productMap).map(([product_id, count]) => ({ product_id, count }));
 
   return NextResponse.json({ byStatus, byPlatform, byProduct });
 }

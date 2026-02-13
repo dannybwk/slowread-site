@@ -8,24 +8,23 @@ export async function GET(request: NextRequest) {
 
   const raw = Number(request.nextUrl.searchParams.get('days'));
   const days = Number.isFinite(raw) && raw >= 1 ? Math.min(Math.round(raw), 365) : 30;
+  const since = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
 
-  const [chartResult, listResult] = await Promise.all([
-    getSupabaseAdmin().rpc('exec_sql', {
-      query: `
-        SELECT DATE(created_at) AS date, COUNT(*) AS new_users
-        FROM profiles
-        WHERE created_at >= CURRENT_DATE - INTERVAL '${days} days'
-        GROUP BY DATE(created_at)
-        ORDER BY date
-      `,
-    }),
+  const [profilesResult, listResult] = await Promise.all([
+    getSupabaseAdmin().from('profiles')
+      .select('created_at')
+      .gte('created_at', since)
+      .order('created_at', { ascending: true }),
     getSupabaseAdmin().auth.admin.listUsers({ perPage: 200 }),
   ]);
 
-  if (chartResult.error) {
-    console.error('[admin/users]', chartResult.error.message);
-    return NextResponse.json({ error: 'Failed to fetch user data' }, { status: 500 });
+  // Group profiles by date
+  const dateMap: Record<string, number> = {};
+  for (const row of profilesResult.data ?? []) {
+    const date = row.created_at.slice(0, 10);
+    dateMap[date] = (dateMap[date] ?? 0) + 1;
   }
+  const data = Object.entries(dateMap).map(([date, new_users]) => ({ date, new_users }));
 
   const users = (listResult.data?.users ?? []).map((u) => ({
     email: u.email ?? '-',
@@ -33,5 +32,5 @@ export async function GET(request: NextRequest) {
     last_sign_in_at: u.last_sign_in_at ?? null,
   }));
 
-  return NextResponse.json({ data: chartResult.data ?? [], users });
+  return NextResponse.json({ data, users });
 }

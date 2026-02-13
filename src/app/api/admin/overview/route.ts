@@ -6,21 +6,25 @@ export async function GET() {
   const authError = await requireAdmin();
   if (authError) return authError;
 
-  const [dau, mau, totalUsers, wordsToday, activeSubs] = await Promise.all([
-    getSupabaseAdmin().rpc('exec_sql', {
-      query: `SELECT COUNT(DISTINCT user_id) AS count FROM reading_sessions WHERE reading_date = CURRENT_DATE`,
-    }).then(r => r.data?.[0]?.count ?? 0),
+  const today = new Date().toISOString().slice(0, 10);
+  const thirtyDaysAgo = new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
 
-    getSupabaseAdmin().rpc('exec_sql', {
-      query: `SELECT COUNT(DISTINCT user_id) AS count FROM reading_sessions WHERE reading_date >= CURRENT_DATE - 30`,
-    }).then(r => r.data?.[0]?.count ?? 0),
+  const [dauResult, mauResult, totalUsers, wordsTodayResult, activeSubs] = await Promise.all([
+    getSupabaseAdmin().from('reading_sessions')
+      .select('user_id')
+      .eq('reading_date', today),
 
-    getSupabaseAdmin().from('profiles').select('*', { count: 'exact', head: true })
+    getSupabaseAdmin().from('reading_sessions')
+      .select('user_id')
+      .gte('reading_date', thirtyDaysAgo),
+
+    getSupabaseAdmin().from('profiles')
+      .select('*', { count: 'exact', head: true })
       .then(r => r.count ?? 0),
 
-    getSupabaseAdmin().rpc('exec_sql', {
-      query: `SELECT COALESCE(SUM(words_read), 0) AS total FROM reading_sessions WHERE reading_date = CURRENT_DATE`,
-    }).then(r => r.data?.[0]?.total ?? 0),
+    getSupabaseAdmin().from('reading_sessions')
+      .select('words_read')
+      .eq('reading_date', today),
 
     getSupabaseAdmin().from('subscriptions')
       .select('*', { count: 'exact', head: true })
@@ -28,11 +32,15 @@ export async function GET() {
       .then(r => r.count ?? 0),
   ]);
 
+  const dau = new Set((dauResult.data ?? []).map(r => r.user_id)).size;
+  const mau = new Set((mauResult.data ?? []).map(r => r.user_id)).size;
+  const wordsToday = (wordsTodayResult.data ?? []).reduce((sum, r) => sum + (r.words_read ?? 0), 0);
+
   return NextResponse.json({
-    dau: Number(dau),
-    mau: Number(mau),
+    dau,
+    mau,
     totalUsers: Number(totalUsers),
-    wordsToday: Number(wordsToday),
+    wordsToday,
     activeSubs: Number(activeSubs),
   });
 }
