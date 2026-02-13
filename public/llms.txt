@@ -1,0 +1,30 @@
+# SlowRead
+
+> Daily passages from classic literature — a reading companion for the unhurried.
+
+SlowRead is a mobile reading app that delivers one curated passage per day from public domain literary classics. It combines AI-powered reading companions with bilingual reading, smart scheduling, and reading streaks to help readers build a consistent habit of deep reading.
+
+## Core Features
+
+- Daily curated passages from classic literature
+- AI reading companion (character maps, plot recaps, cultural context, vocabulary)
+- Bilingual side-by-side reading (all major languages)
+- Smart passage splitting at natural story pause points
+- Personalized reading schedule with adaptive pacing
+- Reading streaks and milestones
+- Text-to-Speech for classics read aloud
+- Offline reading support
+- Beautiful typography with ink-on-paper aesthetic
+
+## Pricing
+
+- Free: One passage per day, full public domain library, reading streaks, personalized schedule, basic bilingual mode, daily reminders
+- Pro: $4.99/month — unlimited reading, AI reading companion, deep vocabulary, text-to-speech, offline reading, annual reading report
+
+## Links
+
+- Website: https://slowread.xyz
+- Website (Chinese): https://slowread.xyz/zh
+- Privacy Policy: https://slowread.xyz/privacy
+- Terms of Service: https://slowread.xyz/terms
+- Contact: tplusstudio@gmail.com

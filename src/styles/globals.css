@@ -3,7 +3,6 @@
    A page that breathes, like a good book.
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,300;1,7..72,400&family=Noto+Serif+TC:wght@300;400;600;700&display=swap');
 
 /* ---------- Reset & Variables ---------- */
 *,
@@ -53,7 +52,7 @@ body {
   font-family: var(--font-serif);
   color: var(--text-primary);
   background-color: var(--bg-paper);
-  background-image: url('../images/paper-texture.png');
+  background-image: url('/images/paper-texture.png');
   background-repeat: repeat;
   background-size: 400px;
   line-height: 1.8;
@@ -159,6 +158,13 @@ img {
   font-weight: 500;
   color: var(--text-primary);
   letter-spacing: -0.02em;
+}
+
+.logo-sub {
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-left: 0.4em;
 }
 
 .nav-links {
@@ -290,6 +296,12 @@ img {
 .store-btn svg {
   width: 18px;
   height: 18px;
+}
+
+.store-btn[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
 }
 
 /* ---------- Manifesto ---------- */

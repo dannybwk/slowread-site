@@ -1,0 +1,72 @@
+import type { Metadata } from 'next';
+import Header from '@/components/site/Header';
+import Footer from '@/components/site/Footer';
+
+export const metadata: Metadata = {
+  title: '使用條款',
+  description: 'SlowRead 慢讀經典使用條款，使用本 App 前請詳閱以下條款。',
+  alternates: {
+    canonical: 'https://slowread.xyz/zh/terms',
+    languages: { en: 'https://slowread.xyz/terms' },
+  },
+  openGraph: {
+    title: '使用條款 — SlowRead 慢讀經典',
+    description: 'SlowRead 慢讀經典使用條款，使用本 App 前請詳閱以下條款。',
+    url: 'https://slowread.xyz/zh/terms',
+    locale: 'zh_TW',
+    images: [{ url: '/images/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary' },
+};
+
+export default function ZhTermsPage() {
+  return (
+    <>
+      <Header lang="zh" />
+
+      <main className="legal container">
+        <h1>使用條款</h1>
+        <p className="last-updated">最後更新：2026 年 2 月 10 日</p>
+
+        <p>使用 SlowRead 慢讀經典（以下簡稱「本 App」）即表示您同意以下條款。若您不同意，請勿使用本 App。</p>
+
+        <h2>1. 使用授權</h2>
+        <p>我們授予您有限的、非專屬的、不可轉讓的、可撤銷的授權，僅限個人、非商業目的使用本 App。您不得複製、修改、散佈、銷售或出租本 App 的任何部分。</p>
+
+        <h2>2. 內容與版權</h2>
+        <p>SlowRead 中提供的文學作品均為<strong>公版書籍（public domain）</strong>。您可以自由閱讀、分享及欣賞這些文本。然而，本 App 的設計、程式碼、品牌識別及精選內容均為 SlowRead 的智慧財產權，未經許可不得重製。</p>
+
+        <h2>3. 使用者行為規範</h2>
+        <p>您同意不得：</p>
+        <ul>
+          <li>將本 App 用於任何非法目的</li>
+          <li>嘗試反向工程、反編譯或拆解本 App</li>
+          <li>干擾或破壞本 App 的服務或伺服器</li>
+          <li>為濫用目的建立多個帳號</li>
+          <li>使用自動化工具存取本 App（機器人、爬蟲等）</li>
+        </ul>
+
+        <h2>4. 帳號</h2>
+        <p>您有責任維護帳號的安全。建立帳號時須提供正確資訊。我們保留暫停或終止違反本條款之帳號的權利。</p>
+
+        <h2>5. 免責聲明</h2>
+        <p>本 App 以「現況」及「可用」基礎提供，不附帶任何明示或暗示之擔保。我們不保證本 App 將不中斷、無錯誤或不含有害元件。</p>
+
+        <h2>6. 責任限制</h2>
+        <p>在法律允許的最大範圍內，SlowRead 對因您使用本 App 而產生的任何間接、附帶、特殊、衍生或懲罰性損害不承擔責任。</p>
+
+        <h2>7. 終止條款</h2>
+        <p>我們可隨時終止或暫停您對本 App 的存取，無論是否有原因、是否事先通知。一旦終止，您使用本 App 的權利立即停止。您也可以隨時透過 <a href="mailto:tplusstudio@gmail.com">tplusstudio@gmail.com</a> 聯絡我們刪除帳號。</p>
+
+        <h2>8. 條款變更</h2>
+        <p>我們保留隨時修改本條款的權利。在變更後繼續使用本 App 即表示接受更新後的條款。</p>
+
+        <h2>9. 聯絡我們</h2>
+        <p>如您對本使用條款有任何問題，請透過以下方式聯絡我們：</p>
+        <p><a href="mailto:tplusstudio@gmail.com">tplusstudio@gmail.com</a></p>
+      </main>
+
+      <Footer lang="zh" />
+    </>
+  );
+}
