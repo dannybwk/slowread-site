@@ -4,13 +4,13 @@ import { createSupabaseBrowser } from '@/lib/supabase-browser';
 import { useRouter } from 'next/navigation';
 
 const NAV_ITEMS = [
-  { label: 'Overview', href: '#overview' },
-  { label: 'Users', href: '#users' },
-  { label: 'Reading', href: '#reading' },
-  { label: 'Books', href: '#books' },
-  { label: 'Revenue', href: '#subscriptions' },
-  { label: 'Streaks', href: '#streaks' },
-  { label: 'AI Costs', href: '#ai' },
+  { label: '總覽', href: '#overview' },
+  { label: '用戶', href: '#users' },
+  { label: '閱讀', href: '#reading' },
+  { label: '書籍', href: '#books' },
+  { label: '營收', href: '#subscriptions' },
+  { label: '連續閱讀', href: '#streaks' },
+  { label: 'AI 成本', href: '#ai' },
 ];
 
 export default function AdminSidebar({ email }: { email: string }) {
@@ -27,7 +27,7 @@ export default function AdminSidebar({ email }: { email: string }) {
     <aside className="admin-sidebar">
       <div className="admin-sidebar-header">
         <span className="admin-sidebar-logo">SlowRead</span>
-        <span className="admin-sidebar-label">Admin</span>
+        <span className="admin-sidebar-label">管理後台</span>
       </div>
 
       <nav className="admin-sidebar-nav">
@@ -41,7 +41,7 @@ export default function AdminSidebar({ email }: { email: string }) {
       <div className="admin-sidebar-footer">
         <span className="admin-sidebar-email">{email}</span>
         <button onClick={handleSignOut} className="admin-sidebar-signout">
-          Sign Out
+          登出
         </button>
       </div>
     </aside>

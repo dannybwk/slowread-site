@@ -36,12 +36,12 @@ export default function AdminLoginPage() {
   return (
     <div className="admin-login-page">
       <div className="admin-login-card">
-        <h1 className="admin-login-title">SlowRead Admin</h1>
-        <p className="admin-login-subtitle">Sign in to access the dashboard</p>
+        <h1 className="admin-login-title">SlowRead 管理後台</h1>
+        <p className="admin-login-subtitle">登入以存取管理面板</p>
 
         <form onSubmit={handleSubmit} className="admin-login-form">
           <label className="admin-form-label">
-            Email
+            電子郵件
             <input
               type="email"
               value={email}
@@ -53,7 +53,7 @@ export default function AdminLoginPage() {
           </label>
 
           <label className="admin-form-label">
-            Password
+            密碼
             <input
               type="password"
               value={password}
@@ -70,7 +70,7 @@ export default function AdminLoginPage() {
             className="admin-form-submit"
             disabled={loading}
           >
-            {loading ? 'Signing in...' : 'Sign In'}
+            {loading ? '登入中...' : '登入'}
           </button>
         </form>
       </div>

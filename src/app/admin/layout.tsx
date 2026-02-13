@@ -4,7 +4,7 @@ import AdminSidebar from '@/components/admin/AdminSidebar';
 import '@/styles/admin.css';
 
 export const metadata = {
-  title: 'Admin — SlowRead',
+  title: '管理後台 — SlowRead',
   robots: { index: false, follow: false },
 };
 
@@ -28,11 +28,11 @@ export default async function AdminLayout({
   if (!user.email || !isAdminEmail(user.email)) {
     return (
       <div className="admin-access-denied">
-        <h1>Access Denied</h1>
-        <p>You do not have permission to access this resource.</p>
+        <h1>存取被拒</h1>
+        <p>您沒有權限存取此頁面。</p>
         <form action="/admin/login">
           <button type="submit" className="admin-form-submit">
-            Back to Login
+            返回登入
           </button>
         </form>
       </div>

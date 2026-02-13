@@ -1,16 +1,17 @@
 interface DataTableProps {
   columns: string[];
+  headers?: string[];
   rows: Record<string, string | number>[];
 }
 
-export default function DataTable({ columns, rows }: DataTableProps) {
+export default function DataTable({ columns, headers, rows }: DataTableProps) {
   return (
     <div className="data-table-wrap">
       <table className="data-table">
         <thead>
           <tr>
-            {columns.map((col) => (
-              <th key={col}>{col}</th>
+            {columns.map((col, i) => (
+              <th key={col}>{headers?.[i] ?? col}</th>
             ))}
           </tr>
         </thead>

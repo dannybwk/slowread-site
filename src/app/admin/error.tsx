@@ -9,10 +9,10 @@ export default function AdminError({
 }) {
   return (
     <div className="admin-access-denied">
-      <h1>Something went wrong</h1>
-      <p>An error occurred while loading the dashboard.</p>
+      <h1>發生錯誤</h1>
+      <p>載入管理面板時發生錯誤。</p>
       <button onClick={reset} className="admin-form-submit">
-        Try again
+        重試
       </button>
     </div>
   );
