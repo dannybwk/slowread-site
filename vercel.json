@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "zh.slowread.xyz" }],
+      "destination": "https://slowread.xyz/zh/$1",
+      "permanent": true
+    }
+  ]
+}
