@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 import { requireAdmin } from '@/lib/admin-auth';
-import { supabaseAdmin } from '@/lib/supabase-admin';
+import { getSupabaseAdmin } from '@/lib/supabase-admin';
 
 export async function GET() {
   const authError = await requireAdmin();
   if (authError) return authError;
 
-  const { data, error } = await supabaseAdmin.rpc('exec_sql', {
+  const { data, error } = await getSupabaseAdmin().rpc('exec_sql', {
     query: `
       SELECT CASE
         WHEN current_streak = 0 THEN '0'
@@ -23,7 +23,10 @@ export async function GET() {
     `,
   });
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  if (error) {
+    console.error('[admin/streaks]', error.message);
+    return NextResponse.json({ error: 'Failed to fetch streak data' }, { status: 500 });
+  }
 
   return NextResponse.json({ data: data ?? [] });
 }

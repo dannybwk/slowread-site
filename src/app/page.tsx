@@ -41,14 +41,14 @@ const GooglePlaySvg = () => (
 function StoreButtons() {
   return (
     <div className="store-buttons">
-      <a href="#" className="store-btn">
+      <span className="store-btn" aria-disabled="true">
         <AppleSvg />
         App Store
-      </a>
-      <a href="#" className="store-btn">
+      </span>
+      <span className="store-btn" aria-disabled="true">
         <GooglePlaySvg />
         Google Play
-      </a>
+      </span>
     </div>
   );
 }

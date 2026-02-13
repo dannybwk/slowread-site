@@ -1,7 +1,5 @@
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import { redirect } from 'next/navigation';
 import { isAdminEmail } from '@/lib/admin-auth';
+import { createSupabaseServer } from '@/lib/supabase-server';
 import AdminSidebar from '@/components/admin/AdminSidebar';
 import '@/styles/admin.css';
 
@@ -15,23 +13,7 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const cookieStore = await cookies();
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll();
-        },
-        setAll(cookiesToSet: { name: string; value: string; options?: Record<string, unknown> }[]) {
-          cookiesToSet.forEach(({ name, value, options }) => {
-            cookieStore.set(name, value, options);
-          });
-        },
-      },
-    }
-  );
+  const supabase = await createSupabaseServer();
 
   const {
     data: { user },
@@ -47,7 +29,7 @@ export default async function AdminLayout({
     return (
       <div className="admin-access-denied">
         <h1>Access Denied</h1>
-        <p>Your email ({user.email}) is not authorized to access the admin panel.</p>
+        <p>You do not have permission to access this resource.</p>
         <form action="/admin/login">
           <button type="submit" className="admin-form-submit">
             Back to Login

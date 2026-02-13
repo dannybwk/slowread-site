@@ -298,6 +298,12 @@ img {
   height: 18px;
 }
 
+.store-btn[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
 /* ---------- Manifesto ---------- */
 .manifesto {
   padding: var(--spacing-xl) 0;

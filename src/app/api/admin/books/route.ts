@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server';
 import { requireAdmin } from '@/lib/admin-auth';
-import { supabaseAdmin } from '@/lib/supabase-admin';
+import { getSupabaseAdmin } from '@/lib/supabase-admin';
 
 export async function GET() {
   const authError = await requireAdmin();
   if (authError) return authError;
 
   const [mostStarted, mostCompleted] = await Promise.all([
-    supabaseAdmin.rpc('exec_sql', {
+    getSupabaseAdmin().rpc('exec_sql', {
       query: `
         SELECT b.title, b.author, COUNT(ub.id) AS starts
         FROM user_books ub JOIN books b ON b.id = ub.book_id
@@ -16,7 +16,7 @@ export async function GET() {
       `,
     }).then(r => r.data ?? []),
 
-    supabaseAdmin.rpc('exec_sql', {
+    getSupabaseAdmin().rpc('exec_sql', {
       query: `
         SELECT b.title, b.author, COUNT(ub.id) AS completions
         FROM user_books ub JOIN books b ON b.id = ub.book_id

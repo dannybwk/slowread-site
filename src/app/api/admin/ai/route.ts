@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server';
 import { requireAdmin } from '@/lib/admin-auth';
-import { supabaseAdmin } from '@/lib/supabase-admin';
+import { getSupabaseAdmin } from '@/lib/supabase-admin';
 
 export async function GET() {
   const authError = await requireAdmin();
   if (authError) return authError;
 
   const [overall, byCardType] = await Promise.all([
-    supabaseAdmin.rpc('exec_sql', {
+    getSupabaseAdmin().rpc('exec_sql', {
       query: `
         SELECT
           COUNT(*) FILTER (WHERE NOT cache_hit)::int AS generations,
@@ -17,7 +17,7 @@ export async function GET() {
       `,
     }).then(r => r.data?.[0] ?? { generations: 0, cache_hits: 0, total_cost: 0 }),
 
-    supabaseAdmin.rpc('exec_sql', {
+    getSupabaseAdmin().rpc('exec_sql', {
       query: `
         SELECT card_type,
                COUNT(*)::int AS generations,

@@ -1,17 +1,17 @@
 import { NextResponse } from 'next/server';
 import { requireAdmin } from '@/lib/admin-auth';
-import { supabaseAdmin } from '@/lib/supabase-admin';
+import { getSupabaseAdmin } from '@/lib/supabase-admin';
 
 export async function GET() {
   const authError = await requireAdmin();
   if (authError) return authError;
 
   const [byStatus, byPlatform, byProduct] = await Promise.all([
-    supabaseAdmin.rpc('exec_sql', {
+    getSupabaseAdmin().rpc('exec_sql', {
       query: `SELECT status, COUNT(*)::int AS count FROM subscriptions GROUP BY status`,
     }).then(r => r.data ?? []),
 
-    supabaseAdmin.rpc('exec_sql', {
+    getSupabaseAdmin().rpc('exec_sql', {
       query: `
         SELECT platform, COUNT(*)::int AS count
         FROM subscriptions
@@ -20,7 +20,7 @@ export async function GET() {
       `,
     }).then(r => r.data ?? []),
 
-    supabaseAdmin.rpc('exec_sql', {
+    getSupabaseAdmin().rpc('exec_sql', {
       query: `
         SELECT product_id, COUNT(*)::int AS count
         FROM subscriptions
