@@ -30,7 +30,12 @@ export const metadata: Metadata = {
   title: { default: 'SlowRead', template: '%s — SlowRead' },
   description:
     'Daily passages from classic literature with AI-powered reading companion. Bilingual reading, smart scheduling, and reading streaks. Free to start.',
-  icons: { icon: '/images/favicon.svg' },
+  icons: {
+    icon: [
+      { url: '/images/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/images/favicon.svg',
+  },
   openGraph: {
     siteName: 'SlowRead',
     type: 'website',
