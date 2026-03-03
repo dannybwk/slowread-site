@@ -195,7 +195,7 @@ img {
 /* ---------- Hero ---------- */
 .hero {
   text-align: center;
-  padding: calc(var(--spacing-2xl) + 2rem) 0 var(--spacing-xl);
+  padding: calc(var(--spacing-2xl) + 2rem) var(--spacing-md) var(--spacing-xl);
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
