@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface HeaderProps {
   lang: 'en' | 'zh';
 }
@@ -7,7 +9,10 @@ export default function Header({ lang }: HeaderProps) {
     return (
       <header className="site-header" id="header">
         <div className="container">
-          <a href="/zh" className="logo">SlowRead 慢讀經典</a>
+          <a href="/zh" className="logo">
+            <Image src="/images/slowread-logo.png" alt="SlowRead" width={32} height={32} className="logo-icon" />
+            SlowRead 慢讀經典
+          </a>
           <nav>
             <ul className="nav-links">
               <li><a href="/zh/privacy">隱私權政策</a></li>
@@ -25,7 +30,10 @@ export default function Header({ lang }: HeaderProps) {
   return (
     <header className="site-header" id="header">
       <div className="container">
-        <a href="/" className="logo">SlowRead <span className="logo-sub">Savor the Classics</span></a>
+        <a href="/" className="logo">
+            <Image src="/images/slowread-logo.png" alt="SlowRead" width={32} height={32} className="logo-icon" />
+            SlowRead <span className="logo-sub">Savor the Classics</span>
+          </a>
         <nav>
           <ul className="nav-links">
             <li><a href="/privacy">Privacy</a></li>

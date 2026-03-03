@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   description:
     'Daily passages from classic literature with AI-powered reading companion. Bilingual reading, smart scheduling, and reading streaks. Free to start.',
   icons: {
-    icon: '/images/logo.png',
-    apple: '/images/logo.png',
+    icon: '/images/slowread-logo.png',
+    apple: '/images/slowread-logo.png',
   },
   openGraph: {
     siteName: 'SlowRead',

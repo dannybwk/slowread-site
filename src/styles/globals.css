@@ -158,6 +158,13 @@ img {
   font-weight: 500;
   color: var(--text-primary);
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  border-radius: 6px;
 }
 
 .logo-sub {
@@ -195,6 +202,12 @@ img {
   flex-direction: column;
   justify-content: center;
   position: relative;
+}
+
+.hero-logo {
+  border-radius: 20px;
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .hero-eyebrow {

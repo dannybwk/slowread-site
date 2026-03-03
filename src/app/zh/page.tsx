@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 import ScrollReveal from '@/components/site/ScrollReveal';
@@ -74,7 +75,7 @@ const jsonLd = [
     '@type': 'Organization',
     name: 'SlowRead 慢讀經典',
     url: 'https://slowread.xyz',
-    logo: 'https://slowread.xyz/images/logo.png',
+    logo: 'https://slowread.xyz/images/slowread-logo.png',
   },
   {
     '@context': 'https://schema.org',
@@ -143,6 +144,7 @@ export default function ZhHomePage() {
       <main>
         {/* Hero */}
         <section className="hero container">
+          <Image src="/images/slowread-logo.png" alt="SlowRead" width={120} height={120} className="hero-logo" priority />
           <p className="hero-eyebrow">獻給不趕路的閱讀者</p>
           <h1>慢下來，<br />深深地讀。</h1>
           <p className="tagline">在快的世界裡，慢慢讀一本好書。</p>

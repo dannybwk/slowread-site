@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 import ScrollReveal from '@/components/site/ScrollReveal';
@@ -73,7 +74,7 @@ const jsonLd = [
     '@type': 'Organization',
     name: 'SlowRead',
     url: 'https://slowread.xyz',
-    logo: 'https://slowread.xyz/images/logo.png',
+    logo: 'https://slowread.xyz/images/slowread-logo.png',
   },
   {
     '@context': 'https://schema.org',
@@ -142,6 +143,7 @@ export default function HomePage() {
       <main>
         {/* Hero */}
         <section className="hero container">
+          <Image src="/images/slowread-logo.png" alt="SlowRead" width={120} height={120} className="hero-logo" priority />
           <p className="hero-eyebrow">A reading companion for the unhurried</p>
           <h1>
             Slow down.
