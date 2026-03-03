@@ -369,12 +369,8 @@ export default function HomePage() {
                   and literary allusion explainers
                 </li>
                 <li>
-                  <span className="ai-bullet">&#9670;</span> Vocabulary help
-                  with nuance, not just definitions
-                </li>
-                <li>
-                  <span className="ai-bullet">&#9670;</span> Text-to-Speech:
-                  listen to your classics read aloud
+                  <span className="ai-bullet">&#9670;</span> Multilingual
+                  support: Chinese, English, Japanese, French
                 </li>
               </ul>
             </div>
@@ -587,13 +583,8 @@ export default function HomePage() {
                 </li>
                 <li>
                   <span className="pricing-check">&#10003;</span>{' '}
-                  <strong>Deep vocabulary</strong> &mdash; nuance, not just
-                  definitions
-                </li>
-                <li>
-                  <span className="pricing-check">&#10003;</span>{' '}
-                  <strong>Text-to-Speech</strong> &mdash; listen to classics
-                  read aloud
+                  <strong>Multilingual AI</strong> &mdash; Chinese, English,
+                  Japanese, French
                 </li>
                 <li>
                   <span className="pricing-check">&#10003;</span>{' '}

@@ -281,8 +281,7 @@ export default function ZhHomePage() {
                 <li><span className="ai-bullet">&#9670;</span> 人物關係圖隨著閱讀進度自動更新</li>
                 <li><span className="ai-bullet">&#9670;</span> 「前情提要」每次開讀前快速回顧</li>
                 <li><span className="ai-bullet">&#9670;</span> 文化背景與文學典故深度解析</li>
-                <li><span className="ai-bullet">&#9670;</span> 詞彙解釋——不只字面意思，更有語境與韻味</li>
-                <li><span className="ai-bullet">&#9670;</span> 有聲書功能：用聽的讀完經典</li>
+                <li><span className="ai-bullet">&#9670;</span> 支援多語系——繁中、英文、日文、法文回應</li>
               </ul>
             </div>
             <div className="ai-preview reveal reveal-delay-2">
@@ -397,8 +396,7 @@ export default function ZhHomePage() {
                 <li><span className="pricing-check">&#10003;</span> 包含免費版所有功能</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>無限閱讀</strong> —— 看完今日段落，想繼續就繼續</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>AI 伴讀助手</strong> —— 人物關係圖、前情提要、文化解析</li>
-                <li><span className="pricing-check">&#10003;</span> <strong>深度詞彙解析</strong> —— 不只字面意思，更有語境韻味</li>
-                <li><span className="pricing-check">&#10003;</span> <strong>有聲書功能</strong> —— 用聽的讀完經典</li>
+                <li><span className="pricing-check">&#10003;</span> <strong>多語系 AI 回應</strong> —— 繁中、英文、日文、法文</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>離線閱讀</strong> —— 下載後在飛機上、通勤中也能讀</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>年度閱讀報告</strong> —— 你的一年文學旅程回顧</li>
               </ul>
