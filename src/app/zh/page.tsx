@@ -108,7 +108,7 @@ const jsonLd = [
         name: 'SlowRead 是免費的嗎？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '是的，SlowRead 免費下載使用。免費版包含每日一段閱讀、完整公版書庫、閱讀連續紀錄、個人化排程、基本雙語模式和每日提醒。Pro 進階版每月 $4.99，解鎖 AI 伴讀、無限閱讀等功能。',
+          text: '是的，SlowRead 免費下載使用。免費版包含每日一段閱讀、完整公版書庫、閱讀連續紀錄、個人化排程和每日提醒。Pro 進階版每月 $3.99，解鎖雙語對照、AI 伴讀、無限閱讀等功能。',
         },
       },
       {
@@ -380,8 +380,8 @@ export default function ZhHomePage() {
                 <li><span className="pricing-check">&#10003;</span> 完整公版書庫</li>
                 <li><span className="pricing-check">&#10003;</span> 閱讀連續紀錄與里程碑</li>
                 <li><span className="pricing-check">&#10003;</span> 個人化閱讀排程</li>
-                <li><span className="pricing-check">&#10003;</span> 基本雙語模式</li>
                 <li><span className="pricing-check">&#10003;</span> 每日閱讀提醒</li>
+                <li className="disabled"><span className="pricing-check">&#10005;</span> 雙語對照閱讀</li>
                 <li className="disabled"><span className="pricing-check">&#10005;</span> AI 伴讀助手</li>
                 <li className="disabled"><span className="pricing-check">&#10005;</span> 無限閱讀</li>
                 <li className="disabled"><span className="pricing-check">&#10005;</span> 離線閱讀</li>
@@ -390,13 +390,14 @@ export default function ZhHomePage() {
             <div className="pricing-card featured reveal reveal-delay-2">
               <span className="pricing-card-badge">最受歡迎</span>
               <p className="pricing-card-name">Pro 進階版</p>
-              <p className="pricing-card-price">$4.99 <span>/ 月</span></p>
+              <p className="pricing-card-price">$3.99 <span>/ 月</span></p>
               <p className="pricing-card-desc">為想深入閱讀的讀者而生。AI 助手、無限閱讀，以及更多。</p>
               <ul className="pricing-list">
                 <li><span className="pricing-check">&#10003;</span> 包含免費版所有功能</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>無限閱讀</strong> —— 看完今日段落，想繼續就繼續</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>AI 伴讀助手</strong> —— 人物關係圖、前情提要、文化解析</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>多語系 AI 回應</strong> —— 繁中、英文、日文、法文</li>
+                <li><span className="pricing-check">&#10003;</span> <strong>雙語對照閱讀</strong> —— 原文與譯文並排對照</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>離線閱讀</strong> —— 下載後在飛機上、通勤中也能讀</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>年度閱讀報告</strong> —— 你的一年文學旅程回顧</li>
               </ul>

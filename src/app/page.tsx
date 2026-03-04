@@ -107,7 +107,7 @@ const jsonLd = [
         name: 'Is SlowRead free?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, SlowRead is free to download and use. The free plan includes one passage per day, the full public domain library, reading streaks, personalized schedule, basic bilingual mode, and daily reminders. A Pro plan at $4.99/month unlocks AI companion, unlimited reading, and more.',
+          text: 'Yes, SlowRead is free to download and use. The free plan includes one passage per day, the full public domain library, reading streaks, personalized schedule, and daily reminders. A Pro plan at $3.99/month unlocks bilingual reading, AI companion, unlimited reading, and more.',
         },
       },
       {
@@ -536,12 +536,12 @@ export default function HomePage() {
                   schedule
                 </li>
                 <li>
-                  <span className="pricing-check">&#10003;</span> Basic
-                  bilingual mode
-                </li>
-                <li>
                   <span className="pricing-check">&#10003;</span> Daily
                   reminders
+                </li>
+                <li className="disabled">
+                  <span className="pricing-check">&#10005;</span> Bilingual
+                  reading
                 </li>
                 <li className="disabled">
                   <span className="pricing-check">&#10005;</span> AI reading
@@ -560,7 +560,7 @@ export default function HomePage() {
               <span className="pricing-card-badge">Most Popular</span>
               <p className="pricing-card-name">Pro</p>
               <p className="pricing-card-price">
-                $4.99 <span>/ month</span>
+                $3.99 <span>/ month</span>
               </p>
               <p className="pricing-card-desc">
                 For readers who want to go deeper. AI-powered insights,
@@ -585,6 +585,11 @@ export default function HomePage() {
                   <span className="pricing-check">&#10003;</span>{' '}
                   <strong>Multilingual AI</strong> &mdash; Chinese, English,
                   Japanese, French
+                </li>
+                <li>
+                  <span className="pricing-check">&#10003;</span>{' '}
+                  <strong>Bilingual reading</strong> &mdash; side-by-side
+                  original &amp; translation
                 </li>
                 <li>
                   <span className="pricing-check">&#10003;</span>{' '}
