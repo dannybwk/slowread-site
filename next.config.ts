@@ -23,6 +23,8 @@ const nextConfig: NextConfig = {
       { source: '/terms.html', destination: '/terms', permanent: true },
       { source: '/zh/privacy.html', destination: '/zh/privacy', permanent: true },
       { source: '/zh/terms.html', destination: '/zh/terms', permanent: true },
+      { source: '/ja/privacy.html', destination: '/ja/privacy', permanent: true },
+      { source: '/ja/terms.html', destination: '/ja/terms', permanent: true },
     ];
   },
 };

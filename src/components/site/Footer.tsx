@@ -1,8 +1,25 @@
 interface FooterProps {
-  lang: 'en' | 'zh';
+  lang: 'en' | 'zh' | 'ja';
 }
 
 export default function Footer({ lang }: FooterProps) {
+  if (lang === 'ja') {
+    return (
+      <footer className="site-footer">
+        <div className="container">
+          <div className="footer-content">
+            <ul className="footer-links">
+              <li><a href="/ja/privacy">プライバシーポリシー</a></li>
+              <li><a href="/ja/terms">利用規約</a></li>
+              <li><a href="mailto:tplusstudio@gmail.com">お問い合わせ</a></li>
+            </ul>
+            <span className="footer-copy">&copy; 2026 SlowRead</span>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+
   if (lang === 'zh') {
     return (
       <footer className="site-footer">

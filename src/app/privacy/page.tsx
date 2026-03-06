@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'SlowRead Privacy Policy. Learn how we collect, use, and protect your data.',
   alternates: {
     canonical: 'https://slowread.xyz/privacy',
-    languages: { 'zh-Hant': 'https://slowread.xyz/zh/privacy' },
+    languages: { 'zh-Hant': 'https://slowread.xyz/zh/privacy', ja: 'https://slowread.xyz/ja/privacy' },
   },
   openGraph: {
     title: 'Privacy Policy — SlowRead',

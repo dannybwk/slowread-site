@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'SlowRead 慢讀經典隱私權政策，了解我們如何蒐集、使用及保護您的資料。',
   alternates: {
     canonical: 'https://slowread.xyz/zh/privacy',
-    languages: { en: 'https://slowread.xyz/privacy' },
+    languages: { en: 'https://slowread.xyz/privacy', ja: 'https://slowread.xyz/ja/privacy' },
   },
   openGraph: {
     title: '隱私權政策 — SlowRead 慢讀經典',

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'SlowRead 慢讀經典支援中心。如有任何問題或建議，歡迎聯繫我們。',
   alternates: {
     canonical: 'https://slowread.xyz/zh/support',
-    languages: { en: 'https://slowread.xyz/support' },
+    languages: { en: 'https://slowread.xyz/support', ja: 'https://slowread.xyz/ja/support' },
   },
   openGraph: {
     title: '支援 — SlowRead 慢讀經典',

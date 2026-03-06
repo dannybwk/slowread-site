@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'SlowRead Terms of Service. Please read these terms carefully before using the App.',
   alternates: {
     canonical: 'https://slowread.xyz/terms',
-    languages: { 'zh-Hant': 'https://slowread.xyz/zh/terms' },
+    languages: { 'zh-Hant': 'https://slowread.xyz/zh/terms', ja: 'https://slowread.xyz/ja/terms' },
   },
   openGraph: {
     title: 'Terms of Service — SlowRead',

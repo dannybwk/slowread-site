@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'SlowRead 慢讀經典使用條款，使用本 App 前請詳閱以下條款。',
   alternates: {
     canonical: 'https://slowread.xyz/zh/terms',
-    languages: { en: 'https://slowread.xyz/terms' },
+    languages: { en: 'https://slowread.xyz/terms', ja: 'https://slowread.xyz/ja/terms' },
   },
   openGraph: {
     title: '使用條款 — SlowRead 慢讀經典',

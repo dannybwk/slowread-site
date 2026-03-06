@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: '/zh',
-    languages: { en: '/', ja: '/ja' },
+    canonical: '/ja',
+    languages: { en: '/', 'zh-Hant': '/zh' },
   },
 };
 
-export default function ZhLayout({
+export default function JaLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="zh-Hant">
+    <html lang="ja">
       <body>{children}</body>
     </html>
   );

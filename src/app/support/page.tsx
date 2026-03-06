@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Get help with SlowRead. Contact us for questions, feedback, or issues.',
   alternates: {
     canonical: 'https://slowread.xyz/support',
-    languages: { 'zh-Hant': 'https://slowread.xyz/zh/support' },
+    languages: { 'zh-Hant': 'https://slowread.xyz/zh/support', ja: 'https://slowread.xyz/ja/support' },
   },
   openGraph: {
     title: 'Support — SlowRead',
