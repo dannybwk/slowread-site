@@ -107,7 +107,7 @@ const jsonLd = [
         name: 'Is SlowRead free?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, SlowRead is free to download and use. The free plan includes one passage per day, the full public domain library, reading streaks, personalized schedule, and daily reminders. A Pro plan at $3.99/month unlocks bilingual reading, AI companion, unlimited reading, and more.',
+          text: 'Yes, SlowRead is free to download and use. The free plan includes one passage per day, the full public domain library, reading streaks, personalized schedule, and daily reminders. A Pro plan at $3.99/month (or $29.99/year, $79.99 lifetime) unlocks bilingual reading, AI companion, unlimited reading, and more.',
         },
       },
       {
@@ -557,7 +557,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="pricing-card featured reveal reveal-delay-2">
-              <span className="pricing-card-badge">Most Popular</span>
+              <span className="pricing-card-badge">Monthly</span>
               <p className="pricing-card-name">Pro</p>
               <p className="pricing-card-price">
                 $3.99 <span>/ month</span>
@@ -600,6 +600,45 @@ export default function HomePage() {
                   <span className="pricing-check">&#10003;</span>{' '}
                   <strong>Annual reading report</strong> &mdash; your year in
                   literature
+                </li>
+              </ul>
+            </div>
+            <div className="pricing-card reveal reveal-delay-3">
+              <span className="pricing-card-badge">Save 37%</span>
+              <p className="pricing-card-name">Annual</p>
+              <p className="pricing-card-price">
+                $29.99 <span>/ year</span>
+              </p>
+              <p className="pricing-card-desc">
+                All Pro features at a discounted yearly rate.
+              </p>
+              <ul className="pricing-list">
+                <li>
+                  <span className="pricing-check">&#10003;</span> Everything in
+                  Pro
+                </li>
+                <li>
+                  <span className="pricing-check">&#10003;</span>{' '}
+                  <strong>Save 37%</strong> &mdash; compared to monthly
+                </li>
+              </ul>
+            </div>
+            <div className="pricing-card reveal reveal-delay-4">
+              <p className="pricing-card-name">Lifetime</p>
+              <p className="pricing-card-price">
+                $79.99 <span>one-time</span>
+              </p>
+              <p className="pricing-card-desc">
+                Pay once, read forever. All Pro features, no subscription.
+              </p>
+              <ul className="pricing-list">
+                <li>
+                  <span className="pricing-check">&#10003;</span> Everything in
+                  Pro
+                </li>
+                <li>
+                  <span className="pricing-check">&#10003;</span>{' '}
+                  <strong>One-time payment</strong> &mdash; no recurring charges
                 </li>
               </ul>
             </div>

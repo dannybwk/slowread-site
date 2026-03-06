@@ -108,7 +108,7 @@ const jsonLd = [
         name: 'SlowRead 是免費的嗎？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '是的，SlowRead 免費下載使用。免費版包含每日一段閱讀、完整公版書庫、閱讀連續紀錄、個人化排程和每日提醒。Pro 進階版每月 $3.99，解鎖雙語對照、AI 伴讀、無限閱讀等功能。',
+          text: '是的，SlowRead 免費下載使用。免費版包含每日一段閱讀、完整公版書庫、閱讀連續紀錄、個人化排程和每日提醒。Pro 進階版每月 $3.99（年訂閱 $29.99/年，終身 $79.99），解鎖雙語對照、AI 伴讀、無限閱讀等功能。',
         },
       },
       {
@@ -388,7 +388,7 @@ export default function ZhHomePage() {
               </ul>
             </div>
             <div className="pricing-card featured reveal reveal-delay-2">
-              <span className="pricing-card-badge">最受歡迎</span>
+              <span className="pricing-card-badge">月訂閱</span>
               <p className="pricing-card-name">Pro 進階版</p>
               <p className="pricing-card-price">$3.99 <span>/ 月</span></p>
               <p className="pricing-card-desc">為想深入閱讀的讀者而生。AI 助手、無限閱讀，以及更多。</p>
@@ -400,6 +400,25 @@ export default function ZhHomePage() {
                 <li><span className="pricing-check">&#10003;</span> <strong>雙語對照閱讀</strong> —— 原文與譯文並排對照</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>離線閱讀</strong> —— 下載後在飛機上、通勤中也能讀</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>年度閱讀報告</strong> —— 你的一年文學旅程回顧</li>
+              </ul>
+            </div>
+            <div className="pricing-card reveal reveal-delay-3">
+              <span className="pricing-card-badge">省 37%</span>
+              <p className="pricing-card-name">年訂閱</p>
+              <p className="pricing-card-price">$29.99 <span>/ 年</span></p>
+              <p className="pricing-card-desc">以優惠年費享有所有 Pro 功能。</p>
+              <ul className="pricing-list">
+                <li><span className="pricing-check">&#10003;</span> 包含 Pro 所有功能</li>
+                <li><span className="pricing-check">&#10003;</span> <strong>省 37%</strong> —— 比月訂閱更划算</li>
+              </ul>
+            </div>
+            <div className="pricing-card reveal reveal-delay-4">
+              <p className="pricing-card-name">終身方案</p>
+              <p className="pricing-card-price">$79.99 <span>一次付費</span></p>
+              <p className="pricing-card-desc">一次付費，永久閱讀。所有 Pro 功能，無需訂閱。</p>
+              <ul className="pricing-list">
+                <li><span className="pricing-check">&#10003;</span> 包含 Pro 所有功能</li>
+                <li><span className="pricing-check">&#10003;</span> <strong>一次付費</strong> —— 不再有任何定期扣款</li>
               </ul>
             </div>
           </div>
