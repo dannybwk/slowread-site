@@ -649,9 +649,9 @@ export default function HomePage() {
               >
                 &#9776;
               </div>
-              <h3>Curated, Not Scraped</h3>
+              <h3>Verified &amp; Refined</h3>
               <p>
-                Every book is hand-verified for copyright, carefully formatted,
+                Every book is verified for copyright, carefully formatted,
                 and enriched with metadata. Quality over quantity.
               </p>
             </div>
