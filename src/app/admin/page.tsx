@@ -22,7 +22,10 @@ function useFetch<T>(url: string) {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch(url)
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error(r.statusText);
+        return r.json();
+      })
       .then((d) => { setData(d); setLoading(false); })
       .catch(() => setLoading(false));
   }, [url]);

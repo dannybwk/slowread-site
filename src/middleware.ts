@@ -26,7 +26,15 @@ export async function middleware(request: NextRequest) {
   );
 
   // Refresh session
-  await supabase.auth.getUser();
+  const { data: { user } } = await supabase.auth.getUser();
+
+  // Redirect unauthenticated users to admin login (but allow login page itself)
+  const pathname = request.nextUrl.pathname;
+  if (!user && pathname.startsWith('/admin') && !pathname.startsWith('/admin/login') && !pathname.startsWith('/api/admin')) {
+    const loginUrl = request.nextUrl.clone();
+    loginUrl.pathname = '/admin/login';
+    return NextResponse.redirect(loginUrl);
+  }
 
   return supabaseResponse;
 }
