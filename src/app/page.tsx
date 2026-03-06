@@ -651,8 +651,8 @@ export default function HomePage() {
               </div>
               <h3>Verified &amp; Refined</h3>
               <p>
-                Every book is verified for copyright, carefully formatted,
-                and enriched with metadata. Quality over quantity.
+                Every book is carefully formatted and enriched with
+                AI-powered metadata.
               </p>
             </div>
             <div className="feature-card reveal reveal-delay-1">

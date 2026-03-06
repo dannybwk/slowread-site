@@ -424,7 +424,7 @@ export default function ZhHomePage() {
             <div className="feature-card reveal reveal-delay-3">
               <div className="feature-icon feature-icon-library" aria-hidden="true">&#9776;</div>
               <h3>嚴選審校，精心排版</h3>
-              <p>每本書都經過版權確認、精心排版，並加入豐富的後設資料。重質不重量。</p>
+              <p>每本書都經過精心排版，並透過 AI 加入豐富的後設資料。</p>
             </div>
             <div className="feature-card reveal reveal-delay-1">
               <div className="feature-icon feature-icon-notify" aria-hidden="true">&#9883;</div>
