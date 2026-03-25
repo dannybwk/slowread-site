@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "67WL73G8CV.com.tplusstudio.slowread",
+        "paths": ["*"]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "67WL73G8CV.com.tplusstudio.slowread"
+    ]
+  }
+}

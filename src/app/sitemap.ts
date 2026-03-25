@@ -7,32 +7,47 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: BASE,
       lastModified: new Date(),
-      alternates: { languages: { 'zh-Hant': `${BASE}/zh` } },
+      alternates: { languages: { 'zh-Hant': `${BASE}/zh`, ja: `${BASE}/ja` } },
     },
     {
       url: `${BASE}/zh`,
       lastModified: new Date(),
-      alternates: { languages: { en: BASE } },
+      alternates: { languages: { en: BASE, ja: `${BASE}/ja` } },
+    },
+    {
+      url: `${BASE}/ja`,
+      lastModified: new Date(),
+      alternates: { languages: { en: BASE, 'zh-Hant': `${BASE}/zh` } },
     },
     {
       url: `${BASE}/privacy`,
       lastModified: new Date(),
-      alternates: { languages: { 'zh-Hant': `${BASE}/zh/privacy` } },
+      alternates: { languages: { 'zh-Hant': `${BASE}/zh/privacy`, ja: `${BASE}/ja/privacy` } },
     },
     {
       url: `${BASE}/zh/privacy`,
       lastModified: new Date(),
-      alternates: { languages: { en: `${BASE}/privacy` } },
+      alternates: { languages: { en: `${BASE}/privacy`, ja: `${BASE}/ja/privacy` } },
+    },
+    {
+      url: `${BASE}/ja/privacy`,
+      lastModified: new Date(),
+      alternates: { languages: { en: `${BASE}/privacy`, 'zh-Hant': `${BASE}/zh/privacy` } },
     },
     {
       url: `${BASE}/terms`,
       lastModified: new Date(),
-      alternates: { languages: { 'zh-Hant': `${BASE}/zh/terms` } },
+      alternates: { languages: { 'zh-Hant': `${BASE}/zh/terms`, ja: `${BASE}/ja/terms` } },
     },
     {
       url: `${BASE}/zh/terms`,
       lastModified: new Date(),
-      alternates: { languages: { en: `${BASE}/terms` } },
+      alternates: { languages: { en: `${BASE}/terms`, ja: `${BASE}/ja/terms` } },
+    },
+    {
+      url: `${BASE}/ja/terms`,
+      lastModified: new Date(),
+      alternates: { languages: { en: `${BASE}/terms`, 'zh-Hant': `${BASE}/zh/terms` } },
     },
   ];
 }

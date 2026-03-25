@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     'Daily passages from classic literature with AI-powered reading companion. Bilingual reading, smart scheduling, and reading streaks. Free to start.',
   alternates: {
     canonical: 'https://slowread.xyz',
-    languages: { 'zh-Hant': 'https://slowread.xyz/zh' },
+    languages: { 'zh-Hant': 'https://slowread.xyz/zh', ja: 'https://slowread.xyz/ja' },
   },
   openGraph: {
     title: 'SlowRead — Slow down. Read deeply.',
@@ -42,10 +42,10 @@ const GooglePlaySvg = () => (
 function StoreButtons() {
   return (
     <div className="store-buttons">
-      <span className="store-btn" aria-disabled="true">
+      <a href="https://apps.apple.com/app/id6759947443" className="store-btn">
         <AppleSvg />
         App Store
-      </span>
+      </a>
       <span className="store-btn" aria-disabled="true">
         <GooglePlaySvg />
         Google Play

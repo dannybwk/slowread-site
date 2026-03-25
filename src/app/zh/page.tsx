@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     '每日一段經典文學選讀，AI 伴讀助手、雙語對照閱讀、智慧排程，讓深度閱讀成為日常習慣。免費開始。',
   alternates: {
     canonical: 'https://slowread.xyz/zh',
-    languages: { en: 'https://slowread.xyz' },
+    languages: { en: 'https://slowread.xyz', ja: 'https://slowread.xyz/ja' },
   },
   openGraph: {
     title: 'SlowRead 慢讀經典 — 慢下來，深深地讀',
@@ -43,10 +43,10 @@ const GooglePlaySvg = () => (
 function StoreButtons() {
   return (
     <div className="store-buttons">
-      <span className="store-btn" aria-disabled="true">
+      <a href="https://apps.apple.com/app/id6759947443" className="store-btn">
         <AppleSvg />
         App Store
-      </span>
+      </a>
       <span className="store-btn" aria-disabled="true">
         <GooglePlaySvg />
         Google Play
