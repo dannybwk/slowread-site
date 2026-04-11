@@ -71,24 +71,110 @@ function StreakGrid() {
 const jsonLd = [
   {
     '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'SlowRead',
+    url: 'https://slowread.xyz',
+    inLanguage: ['en', 'zh-Hant', 'ja'],
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://slowread.xyz/?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'SlowRead',
     url: 'https://slowread.xyz',
     logo: 'https://slowread.xyz/images/slowread-logo.png',
+    sameAs: [
+      'https://apps.apple.com/app/id6759947443',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'tplusstudio@gmail.com',
+      contactType: 'customer support',
+      availableLanguage: ['English', 'Chinese', 'Japanese'],
+    },
   },
   {
     '@context': 'https://schema.org',
-    '@type': 'MobileApplication',
+    '@type': 'SoftwareApplication',
     name: 'SlowRead',
-    operatingSystem: 'iOS, Android',
+    operatingSystem: 'iOS',
     applicationCategory: 'EducationApplication',
     description:
       'Daily passages from classic literature with AI-powered reading companion. Bilingual reading, smart scheduling, and reading streaks.',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
+    offers: [
+      {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+        name: 'Free',
+        description: 'One passage per day, full public domain library, reading streaks, personalized schedule, daily reminders.',
+      },
+      {
+        '@type': 'Offer',
+        price: '3.99',
+        priceCurrency: 'USD',
+        name: 'Pro',
+        description: 'Unlimited reading, AI reading companion, bilingual reading, offline access, annual reading report.',
+      },
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      ratingCount: '12',
+      bestRating: '5',
+      worstRating: '1',
     },
+    downloadUrl: 'https://apps.apple.com/app/id6759947443',
+    screenshot: 'https://slowread.xyz/images/og-image.png',
+    featureList: 'Daily curated passages, AI reading companion, Bilingual side-by-side reading, Smart passage splitting, Adaptive reading schedule, Reading streaks, Text-to-Speech, Offline reading, Beautiful typography',
+    inLanguage: ['en', 'zh-Hant', 'ja'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to build a daily reading habit with SlowRead',
+    description: 'Start reading classic literature in just 5 minutes a day with a personalized schedule and AI companion.',
+    step: [
+      {
+        '@type': 'HowToStep',
+        name: 'Set Your Pace',
+        text: 'Try a sample passage and tell SlowRead how many words feel right per day. The app adapts to your rhythm.',
+        position: 1,
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Pick a Classic',
+        text: 'Browse the public domain library by language, genre, era, or theme. Choose from works like Pride and Prejudice, Meditations, Dream of the Red Chamber, and Tao Te Ching.',
+        position: 2,
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Get Your Personalized Schedule',
+        text: 'SlowRead calculates exactly when you will finish the book. Choose your daily notification time and start your reading journey.',
+        position: 3,
+      },
+    ],
+    totalTime: 'PT5M',
+    tool: {
+      '@type': 'HowToTool',
+      name: 'SlowRead app (iOS)',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://slowread.xyz',
+      },
+    ],
   },
   {
     '@context': 'https://schema.org',
@@ -99,7 +185,7 @@ const jsonLd = [
         name: 'What is SlowRead?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'SlowRead is a mobile reading app that delivers daily passages from public domain literary classics. It combines AI-powered reading companions with bilingual reading, smart scheduling, and reading streaks.',
+          text: 'SlowRead is a mobile reading app that delivers daily passages from public domain literary classics. It combines AI-powered reading companions with bilingual reading, smart scheduling, and reading streaks to help you build a consistent habit of deep reading.',
         },
       },
       {
@@ -126,6 +212,38 @@ const jsonLd = [
           text: 'Yes. SlowRead supports bilingual side-by-side reading, letting you read classics in their original language with a translation, or read foreign classics in your own tongue. All major world languages are supported.',
         },
       },
+      {
+        '@type': 'Question',
+        name: 'How does the AI reading companion work?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'After each passage, the AI companion offers a plot recap so you never forget what happened, explains cultural references and literary allusions, and maps character relationships that update as you read. It supports Chinese, English, Japanese, and French.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How long does it take to finish a book on SlowRead?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'It depends on your pace. For example, Dream of the Red Chamber (731,000 characters) takes about 262 days at 2,800 characters per day (7 minutes per session). SlowRead calculates a personalized schedule and adjusts automatically based on your actual reading.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What happens if I miss a day of reading?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Nothing bad! There is no penalty for missing a day. Your reading schedule recalculates automatically. The book will wait for you. SlowRead is designed to encourage consistent reading without pressure or guilt.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is SlowRead available on Android?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'SlowRead is currently available on iOS via the App Store. An Android version is planned for the future. Stay tuned for updates.',
+        },
+      },
     ],
   },
 ];
@@ -143,7 +261,7 @@ export default function HomePage() {
       <main>
         {/* Hero */}
         <section className="hero container">
-          <Image src="/images/slowread-logo.png" alt="SlowRead" width={120} height={120} className="hero-logo" priority />
+          <Image src="/images/slowread-logo.png" alt="SlowRead — daily classic literature reading app" width={120} height={120} className="hero-logo" priority />
           <p className="hero-eyebrow">A reading companion for the unhurried</p>
           <h1>
             Slow down.

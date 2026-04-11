@@ -49,5 +49,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       alternates: { languages: { en: `${BASE}/terms`, 'zh-Hant': `${BASE}/zh/terms` } },
     },
+    {
+      url: `${BASE}/faq`,
+      lastModified: new Date(),
+      alternates: { languages: { 'zh-Hant': `${BASE}/zh/faq`, ja: `${BASE}/ja/faq` } },
+    },
+    {
+      url: `${BASE}/zh/faq`,
+      lastModified: new Date(),
+      alternates: { languages: { en: `${BASE}/faq`, ja: `${BASE}/ja/faq` } },
+    },
+    {
+      url: `${BASE}/ja/faq`,
+      lastModified: new Date(),
+      alternates: { languages: { en: `${BASE}/faq`, 'zh-Hant': `${BASE}/zh/faq` } },
+    },
   ];
 }

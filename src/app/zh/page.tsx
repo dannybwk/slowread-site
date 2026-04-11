@@ -72,24 +72,104 @@ function StreakGrid() {
 const jsonLd = [
   {
     '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'SlowRead 慢讀經典',
+    url: 'https://slowread.xyz',
+    inLanguage: ['en', 'zh-Hant', 'ja'],
+  },
+  {
+    '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'SlowRead 慢讀經典',
     url: 'https://slowread.xyz',
     logo: 'https://slowread.xyz/images/slowread-logo.png',
+    sameAs: [
+      'https://apps.apple.com/app/id6759947443',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'tplusstudio@gmail.com',
+      contactType: 'customer support',
+      availableLanguage: ['English', 'Chinese', 'Japanese'],
+    },
   },
   {
     '@context': 'https://schema.org',
-    '@type': 'MobileApplication',
+    '@type': 'SoftwareApplication',
     name: 'SlowRead 慢讀經典',
-    operatingSystem: 'iOS, Android',
+    operatingSystem: 'iOS',
     applicationCategory: 'EducationApplication',
     description:
       '每日一段經典文學選讀，AI 伴讀助手、雙語對照閱讀、智慧排程，讓深度閱讀成為日常習慣。',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
+    offers: [
+      {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+        name: '免費版',
+        description: '每日一段閱讀、完整公版書庫、閱讀連續紀錄、個人化排程、每日提醒。',
+      },
+      {
+        '@type': 'Offer',
+        price: '3.99',
+        priceCurrency: 'USD',
+        name: 'Pro 進階版',
+        description: '無限閱讀、AI 伴讀助手、雙語對照閱讀、離線閱讀、年度閱讀報告。',
+      },
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      ratingCount: '12',
+      bestRating: '5',
+      worstRating: '1',
     },
+    downloadUrl: 'https://apps.apple.com/app/id6759947443',
+    featureList: '每日精選段落, AI 伴讀助手, 雙語並排閱讀, 智慧段落切分, 自適應閱讀排程, 閱讀連續紀錄, 文字轉語音, 離線閱讀, 精美排版',
+    inLanguage: ['en', 'zh-Hant', 'ja'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: '如何用 SlowRead 養成每日閱讀習慣',
+    description: '每天只要 5 分鐘，用個人化排程和 AI 伴讀開始你的經典文學之旅。',
+    step: [
+      {
+        '@type': 'HowToStep',
+        name: '設定你的節奏',
+        text: '試讀一段文章，告訴 SlowRead 每天多少字感覺剛好。App 會配合你的步調自動調整。',
+        position: 1,
+      },
+      {
+        '@type': 'HowToStep',
+        name: '挑選一本經典',
+        text: '依語言、類型、年代或主題瀏覽公版書庫。從《紅樓夢》、《道德經》到《傲慢與偏見》、《沉思錄》，世界文學任你挑選。',
+        position: 2,
+      },
+      {
+        '@type': 'HowToStep',
+        name: '取得個人化排程',
+        text: 'SlowRead 會計算你的確切完讀日期。選擇每日推播時間，閱讀旅程就此啟程。',
+        position: 3,
+      },
+    ],
+    totalTime: 'PT5M',
+    tool: {
+      '@type': 'HowToTool',
+      name: 'SlowRead App (iOS)',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: '首頁',
+        item: 'https://slowread.xyz/zh',
+      },
+    ],
   },
   {
     '@context': 'https://schema.org',
@@ -127,6 +207,38 @@ const jsonLd = [
           text: '支援。SlowRead 提供雙語並排閱讀功能，可以用原文搭配翻譯閱讀經典，或用你的母語讀外國文學。支援全球主要語系。',
         },
       },
+      {
+        '@type': 'Question',
+        name: 'AI 伴讀助手怎麼運作？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '每段閱讀後，AI 伴讀會提供前情提要讓你不會忘記劇情、解釋文化典故與文學意涵、描繪隨閱讀進度更新的人物關係圖。支援繁中、英文、日文、法文回應。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '一本書要讀多久？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '依你的閱讀節奏而定。例如《紅樓夢》全書 731,000 字，以每天 2,800 字（約 7 分鐘）的速度，大約 262 天可以讀完。SlowRead 會計算個人化排程，並根據你的實際閱讀進度自動調整。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '中斷一天會怎樣？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '完全沒有懲罰！你的閱讀排程會自動重新計算。書會等你。SlowRead 的設計理念是鼓勵持續閱讀，而不是製造壓力或罪惡感。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'SlowRead 有 Android 版嗎？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'SlowRead 目前在 iOS App Store 上架。Android 版本正在規劃中，敬請期待。',
+        },
+      },
     ],
   },
 ];
@@ -144,7 +256,7 @@ export default function ZhHomePage() {
       <main>
         {/* Hero */}
         <section className="hero container">
-          <Image src="/images/slowread-logo.png" alt="SlowRead" width={120} height={120} className="hero-logo" priority />
+          <Image src="/images/slowread-logo.png" alt="SlowRead 慢讀經典 — 每日經典文學閱讀 App" width={120} height={120} className="hero-logo" priority />
           <p className="hero-eyebrow">獻給不趕路的閱讀者</p>
           <h1>慢下來，<br />深深地讀。</h1>
           <p className="tagline">在快的世界裡，慢慢讀一本好書。</p>

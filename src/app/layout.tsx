@@ -61,6 +61,9 @@ export default function RootLayout({
       lang="en"
       className={`${literata.variable} ${ibmPlexMono.variable} ${notoSerifTC.variable}`}
     >
+      <head>
+        <link rel="author" href="https://slowread.xyz" />
+      </head>
       <body>
         <GoogleAnalytics />
         <FacebookPixel />

@@ -72,24 +72,104 @@ function StreakGrid() {
 const jsonLd = [
   {
     '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'SlowRead',
+    url: 'https://slowread.xyz',
+    inLanguage: ['en', 'zh-Hant', 'ja'],
+  },
+  {
+    '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'SlowRead',
     url: 'https://slowread.xyz',
     logo: 'https://slowread.xyz/images/slowread-logo.png',
+    sameAs: [
+      'https://apps.apple.com/app/id6759947443',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'tplusstudio@gmail.com',
+      contactType: 'customer support',
+      availableLanguage: ['English', 'Chinese', 'Japanese'],
+    },
   },
   {
     '@context': 'https://schema.org',
-    '@type': 'MobileApplication',
+    '@type': 'SoftwareApplication',
     name: 'SlowRead',
-    operatingSystem: 'iOS, Android',
+    operatingSystem: 'iOS',
     applicationCategory: 'EducationApplication',
     description:
       '毎日一節の古典文学。AI読書パートナー、バイリンガル対訳、スマートスケジュール、読書ストリーク。',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
+    offers: [
+      {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+        name: '無料',
+        description: '毎日一節の読書、パブリックドメイン全書庫、読書ストリーク、パーソナライズされたスケジュール、毎日のリマインダー。',
+      },
+      {
+        '@type': 'Offer',
+        price: '3.99',
+        priceCurrency: 'USD',
+        name: 'Pro',
+        description: '無制限読書、AI読書パートナー、バイリンガル対訳、オフライン閲覧、年間読書レポート。',
+      },
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      ratingCount: '12',
+      bestRating: '5',
+      worstRating: '1',
     },
+    downloadUrl: 'https://apps.apple.com/app/id6759947443',
+    featureList: '毎日の厳選パッセージ, AI読書パートナー, バイリンガル並列読書, スマート分割, アダプティブスケジュール, 読書ストリーク, テキスト読み上げ, オフライン閲覧, 美しいタイポグラフィ',
+    inLanguage: ['en', 'zh-Hant', 'ja'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'SlowReadで毎日の読書習慣を作る方法',
+    description: '1日たった5分、パーソナライズされたスケジュールとAIパートナーで古典文学の旅を始めましょう。',
+    step: [
+      {
+        '@type': 'HowToStep',
+        name: 'ペースを設定',
+        text: 'サンプルを試し読みして、一日に何文字がちょうどいいか教えてください。SlowReadがあなたのリズムに合わせます。',
+        position: 1,
+      },
+      {
+        '@type': 'HowToStep',
+        name: '古典を選ぶ',
+        text: '言語、ジャンル、時代、テーマでパブリックドメインの書庫を探索。「吾輩は猫である」「源氏物語」から「高慢と偏見」「道徳経」まで。',
+        position: 2,
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'スケジュールを取得',
+        text: 'SlowReadが読了予定日を正確に計算します。毎日の通知時間を選んで、読書の旅を始めましょう。',
+        position: 3,
+      },
+    ],
+    totalTime: 'PT5M',
+    tool: {
+      '@type': 'HowToTool',
+      name: 'SlowRead App (iOS)',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'ホーム',
+        item: 'https://slowread.xyz/ja',
+      },
+    ],
   },
   {
     '@context': 'https://schema.org',
@@ -127,6 +207,38 @@ const jsonLd = [
           text: 'はい。SlowReadはバイリンガル並列読書に対応しており、原文と翻訳を並べて読んだり、外国の古典を母語で読むことができます。世界の主要言語に対応しています。',
         },
       },
+      {
+        '@type': 'Question',
+        name: 'AI読書パートナーはどう機能しますか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '各節の後に、あらすじの振り返りで前の話を忘れないようにし、文化的背景や文学的典故を解説し、読み進めるごとに更新される人物関係図を提供します。日本語、英語、中国語、フランス語に対応しています。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '一冊読み終えるのにどのくらいかかりますか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'あなたのペース次第です。例えば「紅楼夢」（731,000字）は、1日2,800字（約7分）のペースで約262日かかります。SlowReadがパーソナライズされたスケジュールを計算し、実際の読書ペースに応じて自動調整します。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '一日休んだらどうなりますか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '何も問題ありません！ペナルティはありません。読書スケジュールは自動で再計算されます。本はあなたを待っています。SlowReadはプレッシャーや罪悪感なく、一貫した読書を促すように設計されています。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'SlowReadはAndroidで使えますか？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'SlowReadは現在iOS App Storeで公開中です。Android版は将来リリース予定です。最新情報をお楽しみに。',
+        },
+      },
     ],
   },
 ];
@@ -144,7 +256,7 @@ export default function JaHomePage() {
       <main>
         {/* Hero */}
         <section className="hero container">
-          <Image src="/images/slowread-logo.png" alt="SlowRead" width={120} height={120} className="hero-logo" priority />
+          <Image src="/images/slowread-logo.png" alt="SlowRead — 毎日の古典文学リーディングアプリ" width={120} height={120} className="hero-logo" priority />
           <p className="hero-eyebrow">急がない読書家のために</p>
           <h1>ゆっくり読む、<br />深く読む。</h1>
           <p className="tagline">速い世界で、ゆっくり良い本を読もう。</p>
