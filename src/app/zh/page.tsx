@@ -125,7 +125,7 @@ const jsonLd = [
       worstRating: '1',
     },
     downloadUrl: 'https://apps.apple.com/app/id6759947443',
-    featureList: '每日精選段落, AI 伴讀助手, 雙語並排閱讀, 智慧段落切分, 自適應閱讀排程, 閱讀連續紀錄, 文字轉語音, 離線閱讀, 精美排版',
+    featureList: '每日精選段落, AI 伴讀助手, 雙語並排閱讀, 智慧段落切分, 個人化閱讀排程, 閱讀連續紀錄, 連續凍結, 分享成就卡, 作者小傳, 文字轉語音, 離線閱讀, 精美排版',
     inLanguage: ['en', 'zh-Hant', 'ja'],
   },
   {
@@ -204,7 +204,7 @@ const jsonLd = [
         name: 'SlowRead 支援多語言嗎？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '支援。SlowRead 提供雙語並排閱讀功能，可以用原文搭配翻譯閱讀經典，或用你的母語讀外國文學。支援全球主要語系。',
+          text: '支援。SlowRead 提供雙語並排閱讀功能，可以用原文搭配翻譯閱讀經典。免費用戶可在每本書的前 3 頁體驗雙語模式。支援全球主要語系。',
         },
       },
       {
@@ -220,7 +220,7 @@ const jsonLd = [
         name: '一本書要讀多久？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '依你的閱讀節奏而定。例如《紅樓夢》全書 731,000 字，以每天 2,800 字（約 7 分鐘）的速度，大約 262 天可以讀完。SlowRead 會計算個人化排程，並根據你的實際閱讀進度自動調整。',
+          text: '依你的閱讀節奏而定。例如《紅樓夢》全書 731,000 字，以每天 2,800 字（約 7 分鐘）的速度，大約 262 天可以讀完。SlowRead 會為每本書計算個人化閱讀排程。',
         },
       },
       {
@@ -228,7 +228,7 @@ const jsonLd = [
         name: '中斷一天會怎樣？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '完全沒有懲罰！你的閱讀排程會自動重新計算。書會等你。SlowRead 的設計理念是鼓勵持續閱讀，而不是製造壓力或罪惡感。',
+          text: '完全沒有懲罰！你的閱讀排程會自動重新計算。書會等你。Pro 會員還能使用「連續凍結」（每月 2 次），忙碌時也能守住連續紀錄。SlowRead 的設計理念是鼓勵持續閱讀，而不是製造壓力或罪惡感。',
         },
       },
       {
@@ -356,14 +356,13 @@ export default function ZhHomePage() {
           <div className="bilingual-content">
             <div className="bilingual-text reveal">
               <h2>用任何語言閱讀，<br />從任何語言學習。</h2>
-              <p>用原文搭配翻譯並排閱讀經典，或用你的母語讀外國文學。SlowRead 支援全球主要語系。</p>
+              <p>用原文搭配翻譯並排閱讀經典，或切換為僅原文模式。SlowRead 支援全球主要語系。免費用戶可在每本書的前 3 頁體驗雙語模式。</p>
               <p>文學愛好者發現新世界。語言學習者用真實文本沉浸練習——不是教科書上的對話。</p>
             </div>
             <div className="bilingual-preview reveal reveal-delay-2">
               <div className="bilingual-tab-bar">
                 <span className="bilingual-tab active">雙語對照</span>
                 <span className="bilingual-tab">僅原文</span>
-                <span className="bilingual-tab">僅翻譯</span>
               </div>
               <div className="bilingual-columns">
                 <div className="bilingual-col">
@@ -386,7 +385,7 @@ export default function ZhHomePage() {
           <h2 className="section-title reveal">AI 伴讀，陪你一起讀</h2>
           <div className="ai-content">
             <div className="ai-text reveal">
-              <span className="ai-badge">Pro 進階功能</span>
+              <span className="ai-badge">Pro 進階功能 &middot; 免費每日 2 張卡片</span>
               <p>經典文學讓人半途而廢的兩大原因：<strong>「忘記前面演什麼了」</strong>和<strong>「看不懂這裡在說什麼」</strong>。</p>
               <p>SlowRead 的 AI 伴讀解決了這兩個痛點。每段閱讀後，它會為你回顧劇情、解釋文化典故、描繪人物關係——讓你永遠不會迷路。</p>
               <ul className="ai-features-list">
@@ -430,7 +429,7 @@ export default function ZhHomePage() {
             <div className="streak-text reveal">
               <h2>小小習慣，<br />巨大蛻變</h2>
               <p>閱讀連續紀錄不是壓力，而是動力。每讀一天，就像在生命的故事裡添了一滴墨。</p>
-              <p>今天的段落看完了？想繼續就繼續往下看。多讀或少讀，排程會自動調整。中斷了一天？沒有罪惡感，書會等你。</p>
+              <p>今天的段落看完了？想繼續就繼續往下看。多讀或少讀，排程會自動調整。中斷了一天？沒有罪惡感，書會等你。Pro 會員還有「連續凍結」功能——每月可使用 2 次，忙碌時也能守住連續紀錄。</p>
             </div>
             <div className="streak-visual reveal reveal-delay-2">
               <span className="streak-counter">42</span>
@@ -493,8 +492,8 @@ export default function ZhHomePage() {
                 <li><span className="pricing-check">&#10003;</span> 閱讀連續紀錄與里程碑</li>
                 <li><span className="pricing-check">&#10003;</span> 個人化閱讀排程</li>
                 <li><span className="pricing-check">&#10003;</span> 每日閱讀提醒</li>
-                <li className="disabled"><span className="pricing-check">&#10005;</span> 雙語對照閱讀</li>
-                <li className="disabled"><span className="pricing-check">&#10005;</span> AI 伴讀助手</li>
+                <li><span className="pricing-check">&#10003;</span> 雙語對照閱讀 —— 每本書前 3 頁免費體驗</li>
+                <li><span className="pricing-check">&#10003;</span> AI 伴讀助手 —— 每日 2 張免費卡片</li>
                 <li className="disabled"><span className="pricing-check">&#10005;</span> 無限閱讀</li>
                 <li className="disabled"><span className="pricing-check">&#10005;</span> 離線閱讀</li>
               </ul>
@@ -511,6 +510,8 @@ export default function ZhHomePage() {
                 <li><span className="pricing-check">&#10003;</span> <strong>多語系 AI 回應</strong> —— 繁中、英文、日文、法文</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>雙語對照閱讀</strong> —— 原文與譯文並排對照</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>離線閱讀</strong> —— 下載後在飛機上、通勤中也能讀</li>
+                <li><span className="pricing-check">&#10003;</span> <strong>連續凍結</strong> —— 每月 2 次，守住你的連續紀錄</li>
+                <li><span className="pricing-check">&#10003;</span> <strong>分享成就卡</strong> —— 將閱讀數據製成精美卡片分享</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>年度閱讀報告</strong> —— 你的一年文學旅程回顧</li>
               </ul>
             </div>
@@ -530,8 +531,8 @@ export default function ZhHomePage() {
             </div>
             <div className="feature-card reveal reveal-delay-2">
               <div className="feature-icon feature-icon-streak" aria-hidden="true">&#10047;</div>
-              <h3>自適應排程</h3>
-              <p>今天多讀了？完讀日期往前移。漏了一天？自動重新計算。永遠精確，從不批判。</p>
+              <h3>個人化排程</h3>
+              <p>設定你自己的閱讀節奏，獲得個人化的完讀日期。漏了一天？自動重新計算。永遠精確，從不批判。</p>
             </div>
             <div className="feature-card reveal reveal-delay-3">
               <div className="feature-icon feature-icon-library" aria-hidden="true">&#9776;</div>
@@ -545,10 +546,20 @@ export default function ZhHomePage() {
             </div>
             <div className="feature-card reveal reveal-delay-2">
               <div className="feature-icon feature-icon-offline" aria-hidden="true">&#9729;</div>
+              <h3>作者小傳</h3>
+              <p>點擊任何作者名稱，即可查看生平簡介、生卒年份與歷史背景。</p>
+            </div>
+            <div className="feature-card reveal reveal-delay-3">
+              <div className="feature-icon feature-icon-free" aria-hidden="true">&#10084;</div>
+              <h3>分享你的旅程</h3>
+              <p>將你的閱讀連續紀錄與數據製成精美的成就卡片分享，激勵朋友一起養成閱讀習慣。</p>
+            </div>
+            <div className="feature-card reveal reveal-delay-1">
+              <div className="feature-icon feature-icon-offline" aria-hidden="true">&#9729;</div>
               <h3>精美排版</h3>
               <p>宣紙紋理、精心挑選的襯線字體、向文字致敬的版面設計。</p>
             </div>
-            <div className="feature-card reveal reveal-delay-3">
+            <div className="feature-card reveal reveal-delay-2">
               <div className="feature-icon feature-icon-free" aria-hidden="true">&#10084;</div>
               <h3>永遠沒有廣告</h3>
               <p>免費下載，沒有廣告，沒有黑暗模式。公版書永遠免費。我們先贏得信任，再贏得收入。</p>

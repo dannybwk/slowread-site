@@ -125,7 +125,7 @@ const jsonLd = [
       worstRating: '1',
     },
     downloadUrl: 'https://apps.apple.com/app/id6759947443',
-    featureList: '毎日の厳選パッセージ, AI読書パートナー, バイリンガル並列読書, スマート分割, アダプティブスケジュール, 読書ストリーク, テキスト読み上げ, オフライン閲覧, 美しいタイポグラフィ',
+    featureList: '毎日の厳選パッセージ, AI読書パートナー, バイリンガル並列読書, スマート分割, パーソナライズスケジュール, 読書ストリーク, ストリークフリーズ, 達成カードの共有, 著者プロフィール, テキスト読み上げ, オフライン閲覧, 美しいタイポグラフィ',
     inLanguage: ['en', 'zh-Hant', 'ja'],
   },
   {
@@ -204,7 +204,7 @@ const jsonLd = [
         name: 'SlowReadは多言語に対応していますか？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'はい。SlowReadはバイリンガル並列読書に対応しており、原文と翻訳を並べて読んだり、外国の古典を母語で読むことができます。世界の主要言語に対応しています。',
+          text: 'はい。SlowReadはバイリンガル並列読書に対応しており、原文と翻訳を並べて読むことができます。無料ユーザーは各書籍の最初の3ページでバイリンガルモードをお試しいただけます。世界の主要言語に対応しています。',
         },
       },
       {
@@ -220,7 +220,7 @@ const jsonLd = [
         name: '一冊読み終えるのにどのくらいかかりますか？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'あなたのペース次第です。例えば「紅楼夢」（731,000字）は、1日2,800字（約7分）のペースで約262日かかります。SlowReadがパーソナライズされたスケジュールを計算し、実際の読書ペースに応じて自動調整します。',
+          text: 'あなたのペース次第です。例えば「紅楼夢」（731,000字）は、1日2,800字（約7分）のペースで約262日かかります。SlowReadがすべての本にパーソナライズされた読書スケジュールを計算します。',
         },
       },
       {
@@ -228,7 +228,7 @@ const jsonLd = [
         name: '一日休んだらどうなりますか？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '何も問題ありません！ペナルティはありません。読書スケジュールは自動で再計算されます。本はあなたを待っています。SlowReadはプレッシャーや罪悪感なく、一貫した読書を促すように設計されています。',
+          text: '何も問題ありません！ペナルティはありません。読書スケジュールは自動で再計算されます。本はあなたを待っています。Proメンバーは「ストリークフリーズ」（月2回まで）を使って、忙しい日もストリークを守れます。SlowReadはプレッシャーや罪悪感なく、一貫した読書を促すように設計されています。',
         },
       },
       {
@@ -356,14 +356,13 @@ export default function JaHomePage() {
           <div className="bilingual-content">
             <div className="bilingual-text reveal">
               <h2>どの言語でも読める、<br />どの言語からも学べる。</h2>
-              <p>原文と翻訳を並べて古典を読む。あるいは外国の古典を母語で読む。SlowReadは世界の主要言語に対応しています。</p>
+              <p>原文と翻訳を並べて古典を読む、または原文のみに切り替え。SlowReadは世界の主要言語に対応。無料ユーザーは各書籍の最初の3ページでバイリンガルモードをお試しいただけます。</p>
               <p>文学愛好家は新しい世界を発見する。語学学習者は教科書の会話ではなく、本物のテキストで没入練習ができます。</p>
             </div>
             <div className="bilingual-preview reveal reveal-delay-2">
               <div className="bilingual-tab-bar">
                 <span className="bilingual-tab active">バイリンガル</span>
                 <span className="bilingual-tab">原文のみ</span>
-                <span className="bilingual-tab">翻訳のみ</span>
               </div>
               <div className="bilingual-columns">
                 <div className="bilingual-col">
@@ -386,7 +385,7 @@ export default function JaHomePage() {
           <h2 className="section-title reveal">一緒に読むAIパートナー</h2>
           <div className="ai-content">
             <div className="ai-text reveal">
-              <span className="ai-badge">Pro機能</span>
+              <span className="ai-badge">Pro機能 &middot; 無料で毎日2枚</span>
               <p>古典文学で挫折する理由は二つ：<strong>「前の話を忘れた」</strong>と<strong>「背景がわからない」</strong>。</p>
               <p>SlowReadのAIパートナーは両方を解決します。各節の後に、あらすじの振り返り、文化的背景の解説、人物関係の整理を提供——もう迷子にはなりません。</p>
               <ul className="ai-features-list">
@@ -430,7 +429,7 @@ export default function JaHomePage() {
             <div className="streak-text reveal">
               <h2>小さな習慣が、<br />大きな変化に</h2>
               <p>読書ストリークはプレッシャーではなく、モチベーション。読んだ日ごとに、あなたの物語に一滴のインクが加わる。</p>
-              <p>今日の一節を読み終えた？続けたければどうぞ。多く読んでも少なく読んでも、スケジュールは自動調整。一日休んでも大丈夫。本はあなたを待っています。</p>
+              <p>今日の一節を読み終えた？続けたければどうぞ。多く読んでも少なく読んでも、スケジュールは自動調整。一日休んでも大丈夫。本はあなたを待っています。Proメンバーには「ストリークフリーズ」機能も——月2回まで使えて、忙しい日もストリークを守れます。</p>
             </div>
             <div className="streak-visual reveal reveal-delay-2">
               <span className="streak-counter">42</span>
@@ -493,8 +492,8 @@ export default function JaHomePage() {
                 <li><span className="pricing-check">&#10003;</span> 読書ストリーク＆マイルストーン</li>
                 <li><span className="pricing-check">&#10003;</span> パーソナライズされたスケジュール</li>
                 <li><span className="pricing-check">&#10003;</span> 毎日のリマインダー</li>
-                <li className="disabled"><span className="pricing-check">&#10005;</span> バイリンガル対訳</li>
-                <li className="disabled"><span className="pricing-check">&#10005;</span> AI読書パートナー</li>
+                <li><span className="pricing-check">&#10003;</span> バイリンガル対訳 —— 各書籍の最初の3ページ</li>
+                <li><span className="pricing-check">&#10003;</span> AI読書パートナー —— 毎日2枚無料</li>
                 <li className="disabled"><span className="pricing-check">&#10005;</span> 無制限読書</li>
                 <li className="disabled"><span className="pricing-check">&#10005;</span> オフライン閲覧</li>
               </ul>
@@ -511,6 +510,8 @@ export default function JaHomePage() {
                 <li><span className="pricing-check">&#10003;</span> <strong>多言語AI対応</strong> —— 日本語、英語、中国語、フランス語</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>バイリンガル対訳</strong> —— 原文と翻訳を並べて読む</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>オフライン閲覧</strong> —— ダウンロードして飛行機や通勤中にも</li>
+                <li><span className="pricing-check">&#10003;</span> <strong>ストリークフリーズ</strong> —— 月2回、ストリークを守る</li>
+                <li><span className="pricing-check">&#10003;</span> <strong>達成カードの共有</strong> —— 読書データを美しいカードでシェア</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>年間読書レポート</strong> —— あなたの一年間の文学の旅</li>
               </ul>
             </div>
@@ -530,8 +531,8 @@ export default function JaHomePage() {
             </div>
             <div className="feature-card reveal reveal-delay-2">
               <div className="feature-icon feature-icon-streak" aria-hidden="true">&#10047;</div>
-              <h3>アダプティブスケジュール</h3>
-              <p>今日多く読んだ？読了日が早まります。一日休んだ？自動で再計算。常に正確で、決して責めません。</p>
+              <h3>パーソナライズスケジュール</h3>
+              <p>自分のペースを設定して、パーソナライズされた読了日を取得。一日休んだ？自動で再計算。常に正確で、決して責めません。</p>
             </div>
             <div className="feature-card reveal reveal-delay-3">
               <div className="feature-icon feature-icon-library" aria-hidden="true">&#9776;</div>
@@ -545,10 +546,20 @@ export default function JaHomePage() {
             </div>
             <div className="feature-card reveal reveal-delay-2">
               <div className="feature-icon feature-icon-offline" aria-hidden="true">&#9729;</div>
+              <h3>著者プロフィール</h3>
+              <p>著者名をタップすると、経歴・生没年・歴史的背景を確認できます。</p>
+            </div>
+            <div className="feature-card reveal reveal-delay-3">
+              <div className="feature-icon feature-icon-free" aria-hidden="true">&#10084;</div>
+              <h3>読書の旅をシェア</h3>
+              <p>読書ストリークやデータを美しい達成カードにして共有。友人に読書習慣のきっかけを。</p>
+            </div>
+            <div className="feature-card reveal reveal-delay-1">
+              <div className="feature-icon feature-icon-offline" aria-hidden="true">&#9729;</div>
               <h3>美しいタイポグラフィ</h3>
               <p>和紙のような質感、丁寧に選ばれた明朝体、文字を敬うレイアウトデザイン。</p>
             </div>
-            <div className="feature-card reveal reveal-delay-3">
+            <div className="feature-card reveal reveal-delay-2">
               <div className="feature-icon feature-icon-free" aria-hidden="true">&#10084;</div>
               <h3>広告なし、永遠に</h3>
               <p>無料ダウンロード、広告なし、ダークパターンなし。パブリックドメインの本は永遠に無料。信頼を先に、収益はその後。</p>

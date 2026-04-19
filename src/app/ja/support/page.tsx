@@ -53,7 +53,7 @@ export default function JaSupportPage() {
         <p>アカウントおよび関連するすべてのデータを削除するには、<a href="mailto:tplusstudio@gmail.com">tplusstudio@gmail.com</a> までメールでご連絡ください。30日以内にリクエストを処理いたします。</p>
 
         <h3>SlowRead は無料ですか？</h3>
-        <p>SlowRead は、毎日の読書機能を含む無料プランを提供しています。SlowRead Pro にアップグレードすると、AI読書コンパニオン、無制限のブックマークなど、追加機能をご利用いただけます。</p>
+        <p>SlowRead は、毎日の読書機能に加え、毎日2枚の無料AIカードと各書籍の最初の3ページでのバイリンガル体験を含む無料プランを提供しています。SlowRead Pro にアップグレードすると、フルAI読書パートナー、無制限バイリンガル対訳、ストリークフリーズなど、追加機能をご利用いただけます。</p>
       </main>
 
       <Footer lang="ja" />

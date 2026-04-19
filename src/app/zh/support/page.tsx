@@ -50,7 +50,7 @@ export default function ZhSupportPage() {
         <p>如需刪除帳號及所有相關資料，請發送郵件至 <a href="mailto:tplusstudio@gmail.com">tplusstudio@gmail.com</a>，我們將在 30 天內處理您的請求。</p>
 
         <h3>SlowRead 是免費的嗎？</h3>
-        <p>SlowRead 提供免費版本，包含每日閱讀功能。升級為 SlowRead Pro 可解鎖 AI 伴讀、無限書籤等更多功能。</p>
+        <p>SlowRead 提供免費版本，包含每日閱讀、每日 2 張 AI 卡片，以及每本書前 3 頁的雙語體驗。升級為 SlowRead Pro 可解鎖完整 AI 伴讀、無限雙語閱讀、連續凍結等更多功能。</p>
       </main>
 
       <Footer lang="zh" />

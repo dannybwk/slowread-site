@@ -49,7 +49,7 @@ export default function SupportPage() {
         <p>To delete your account and all associated data, please email us at <a href="mailto:tplusstudio@gmail.com">tplusstudio@gmail.com</a>. We will process your request within 30 days.</p>
 
         <h3>Is SlowRead free?</h3>
-        <p>SlowRead offers a free tier with daily reading access. SlowRead Pro unlocks additional features including the AI reading companion, unlimited bookmarks, and more.</p>
+        <p>SlowRead offers a free tier with daily reading access, plus 2 free AI cards per day and bilingual mode for the first 3 pages of each book. SlowRead Pro unlocks the full AI reading companion, unlimited bilingual reading, Streak Freeze, and more.</p>
       </main>
 
       <Footer lang="en" />

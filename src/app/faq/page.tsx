@@ -34,19 +34,19 @@ const faqs = [
   },
   {
     q: 'How does the AI reading companion work?',
-    a: 'The AI companion (Pro feature) solves the two biggest reasons people give up on classics: "I forgot what happened" and "I don\'t understand the context." After each passage, it provides plot recaps so you never lose track, character relationship maps that update as you read, cultural context explainers for historical references, and deep vocabulary notes. It supports English, Chinese, Japanese, and French.',
+    a: 'The AI companion (Pro feature) solves the two biggest reasons people give up on classics: "I forgot what happened" and "I don\'t understand the context." After each passage, it provides plot recaps so you never lose track, character relationship maps that update as you read, and cultural context explainers for historical references. Free users can try 2 AI cards per day. It supports English, Chinese, Japanese, and French.',
   },
   {
     q: 'Does SlowRead support multiple languages?',
-    a: 'Yes! SlowRead supports bilingual side-by-side reading, letting you read classics in their original language alongside a translation. You can switch between three modes: side-by-side, original only, or translation only. All major world languages are supported. It\'s great for both literature lovers and language learners.',
+    a: 'Yes! SlowRead supports bilingual side-by-side reading, letting you read classics in their original language alongside a translation. You can toggle between side-by-side and original only. Free users can try bilingual mode for the first 3 pages of each book. All major world languages are supported. It\'s great for both literature lovers and language learners.',
   },
   {
     q: 'How long does it take to finish a book?',
-    a: 'It depends on your chosen pace. For example, Dream of the Red Chamber (731,000 characters) takes about 262 days at 2,800 characters per day — roughly 7 minutes per reading session. SlowRead calculates a personalized schedule for every book and adjusts automatically based on your actual reading pace.',
+    a: 'It depends on your chosen pace. For example, Dream of the Red Chamber (731,000 characters) takes about 262 days at 2,800 characters per day — roughly 7 minutes per reading session. SlowRead calculates a personalized reading schedule for every book.',
   },
   {
     q: 'What happens if I miss a day?',
-    a: 'Nothing bad at all! There\'s no penalty for missing a day. Your reading schedule simply recalculates automatically. The book waits for you. SlowRead is designed to encourage consistent reading through positive momentum, not pressure or guilt.',
+    a: 'Nothing bad at all! There\'s no penalty for missing a day. Your reading schedule simply recalculates automatically. The book waits for you. Pro members can also use Streak Freeze (up to 2 times per month) to keep their streak alive on busy days. SlowRead is designed to encourage consistent reading through positive momentum, not pressure or guilt.',
   },
   {
     q: 'How are passages divided?',

@@ -130,7 +130,7 @@ const jsonLd = [
     },
     downloadUrl: 'https://apps.apple.com/app/id6759947443',
     screenshot: 'https://slowread.xyz/images/og-image.png',
-    featureList: 'Daily curated passages, AI reading companion, Bilingual side-by-side reading, Smart passage splitting, Adaptive reading schedule, Reading streaks, Text-to-Speech, Offline reading, Beautiful typography',
+    featureList: 'Daily curated passages, AI reading companion, Bilingual side-by-side reading, Smart passage splitting, Personalized reading schedule, Reading streaks, Streak Freeze, Share achievement card, Author biographies, Text-to-Speech, Offline reading, Beautiful typography',
     inLanguage: ['en', 'zh-Hant', 'ja'],
   },
   {
@@ -209,7 +209,7 @@ const jsonLd = [
         name: 'Does SlowRead support multiple languages?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. SlowRead supports bilingual side-by-side reading, letting you read classics in their original language with a translation, or read foreign classics in your own tongue. All major world languages are supported.',
+          text: 'Yes. SlowRead supports bilingual side-by-side reading, letting you read classics in their original language with a translation. Free users can try bilingual mode for the first 3 pages of each book. All major world languages are supported.',
         },
       },
       {
@@ -225,7 +225,7 @@ const jsonLd = [
         name: 'How long does it take to finish a book on SlowRead?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'It depends on your pace. For example, Dream of the Red Chamber (731,000 characters) takes about 262 days at 2,800 characters per day (7 minutes per session). SlowRead calculates a personalized schedule and adjusts automatically based on your actual reading.',
+          text: 'It depends on your pace. For example, Dream of the Red Chamber (731,000 characters) takes about 262 days at 2,800 characters per day (7 minutes per session). SlowRead calculates a personalized reading schedule for every book.',
         },
       },
       {
@@ -233,7 +233,7 @@ const jsonLd = [
         name: 'What happens if I miss a day of reading?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Nothing bad! There is no penalty for missing a day. Your reading schedule recalculates automatically. The book will wait for you. SlowRead is designed to encourage consistent reading without pressure or guilt.',
+          text: 'Nothing bad! There is no penalty for missing a day. Your reading schedule recalculates automatically. The book will wait for you. Pro members can also use Streak Freeze (up to 2 times per month) to keep their streak alive on busy days. SlowRead is designed to encourage consistent reading without pressure or guilt.',
         },
       },
       {
@@ -416,8 +416,9 @@ export default function HomePage() {
               </h2>
               <p>
                 Read classics in their original language with a side-by-side
-                translation. Or read a foreign classic in your own tongue.
-                SlowRead supports all major world languages.
+                translation, or switch to original only. SlowRead supports
+                all major world languages. Free users can try bilingual
+                mode for the first 3 pages of each book.
               </p>
               <p>
                 Literature lovers discover new worlds. Language learners get
@@ -429,7 +430,6 @@ export default function HomePage() {
               <div className="bilingual-tab-bar">
                 <span className="bilingual-tab active">Side-by-Side</span>
                 <span className="bilingual-tab">Original Only</span>
-                <span className="bilingual-tab">Translation</span>
               </div>
               <div className="bilingual-columns">
                 <div className="bilingual-col">
@@ -460,7 +460,7 @@ export default function HomePage() {
           </h2>
           <div className="ai-content">
             <div className="ai-text reveal">
-              <span className="ai-badge">Pro Feature</span>
+              <span className="ai-badge">Pro Feature &middot; 2 free cards/day</span>
               <p>
                 Classic literature makes people give up for two reasons:{' '}
                 <strong>&ldquo;I forgot what happened before&rdquo;</strong> and{' '}
@@ -553,7 +553,9 @@ export default function HomePage() {
               <p>
                 Finished today&rsquo;s passage? Keep going if you want. Read
                 more or less &mdash; your schedule adjusts automatically. Miss a
-                day? No guilt. The book will wait.
+                day? No guilt. The book will wait. Pro members also get
+                Streak Freeze &mdash; use it up to 2 times per month to
+                protect your streak when life gets busy.
               </p>
             </div>
             <div className="streak-visual reveal reveal-delay-2">
@@ -657,13 +659,13 @@ export default function HomePage() {
                   <span className="pricing-check">&#10003;</span> Daily
                   reminders
                 </li>
-                <li className="disabled">
-                  <span className="pricing-check">&#10005;</span> Bilingual
-                  reading
+                <li>
+                  <span className="pricing-check">&#10003;</span> Bilingual
+                  reading &mdash; first 3 pages per book
                 </li>
-                <li className="disabled">
-                  <span className="pricing-check">&#10005;</span> AI reading
-                  companion
+                <li>
+                  <span className="pricing-check">&#10003;</span> AI reading
+                  companion &mdash; 2 cards per day
                 </li>
                 <li className="disabled">
                   <span className="pricing-check">&#10005;</span> Unlimited
@@ -716,6 +718,16 @@ export default function HomePage() {
                 </li>
                 <li>
                   <span className="pricing-check">&#10003;</span>{' '}
+                  <strong>Streak Freeze</strong> &mdash; protect your streak
+                  up to 2x per month
+                </li>
+                <li>
+                  <span className="pricing-check">&#10003;</span>{' '}
+                  <strong>Share achievement card</strong> &mdash; share your
+                  reading stats beautifully
+                </li>
+                <li>
+                  <span className="pricing-check">&#10003;</span>{' '}
                   <strong>Annual reading report</strong> &mdash; your year in
                   literature
                 </li>
@@ -754,10 +766,11 @@ export default function HomePage() {
               >
                 &#10047;
               </div>
-              <h3>Adaptive Schedule</h3>
+              <h3>Personalized Schedule</h3>
               <p>
-                Read more today? Your finish date moves up. Miss a day? It
-                recalculates. Always accurate, never judgmental.
+                Set your own reading pace and get a personalized finish
+                date. Miss a day? It recalculates. Always accurate, never
+                judgmental.
               </p>
             </div>
             <div className="feature-card reveal reveal-delay-3">
@@ -793,13 +806,40 @@ export default function HomePage() {
               >
                 &#9729;
               </div>
+              <h3>Author Biographies</h3>
+              <p>
+                Tap any author name to discover their story &mdash; biography,
+                birth and death years, and historical context.
+              </p>
+            </div>
+            <div className="feature-card reveal reveal-delay-3">
+              <div
+                className="feature-icon feature-icon-free"
+                aria-hidden="true"
+              >
+                &#10084;
+              </div>
+              <h3>Share Your Journey</h3>
+              <p>
+                Share your reading streaks and stats as a beautiful
+                achievement card. Inspire friends to start their own reading
+                habit.
+              </p>
+            </div>
+            <div className="feature-card reveal reveal-delay-1">
+              <div
+                className="feature-icon feature-icon-offline"
+                aria-hidden="true"
+              >
+                &#9729;
+              </div>
               <h3>Beautiful Typography</h3>
               <p>
                 Ink on paper textures, carefully chosen serif fonts, and layouts
                 that honor the written word.
               </p>
             </div>
-            <div className="feature-card reveal reveal-delay-3">
+            <div className="feature-card reveal reveal-delay-2">
               <div
                 className="feature-icon feature-icon-free"
                 aria-hidden="true"
