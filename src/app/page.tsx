@@ -111,14 +111,14 @@ const jsonLd = [
         price: '0',
         priceCurrency: 'USD',
         name: 'Free',
-        description: 'One passage per day, full public domain library, reading streaks, personalized schedule, daily reminders.',
+        description: 'Full public domain library, daily passages, reading streaks, personalized schedule, daily reminders, monthly report, AI companion (5 cards/day), bilingual demo (first 3 pages).',
       },
       {
         '@type': 'Offer',
         price: '3.99',
         priceCurrency: 'USD',
         name: 'Pro',
-        description: 'Unlimited reading, AI reading companion, bilingual reading, offline access, annual reading report.',
+        description: 'Unlimited AI companion, full bilingual reading, offline access, Streak Freeze, annual reading report.',
       },
     ],
     aggregateRating: {
@@ -193,7 +193,7 @@ const jsonLd = [
         name: 'Is SlowRead free?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, SlowRead is free to download and use. The free plan includes one passage per day, the full public domain library, reading streaks, personalized schedule, and daily reminders. A Pro plan at $3.99/month unlocks bilingual reading, AI companion, unlimited reading, and more.',
+          text: 'Yes, SlowRead is free to download and use. The free plan includes the full public domain library, daily passages, reading streaks, personalized schedule, monthly reading report, an AI companion taste (5 cards/day), and a bilingual demo (first 3 pages). A Pro plan at $3.99/month unlocks unlimited AI companion, full bilingual reading, offline access, Streak Freeze, and the annual reading report.',
         },
       },
       {
@@ -460,7 +460,7 @@ export default function HomePage() {
           </h2>
           <div className="ai-content">
             <div className="ai-text reveal">
-              <span className="ai-badge">Pro Feature &middot; 2 free cards/day</span>
+              <span className="ai-badge">Pro Feature &middot; 5 free cards/day</span>
               <p>
                 Classic literature makes people give up for two reasons:{' '}
                 <strong>&ldquo;I forgot what happened before&rdquo;</strong> and{' '}
@@ -640,10 +640,6 @@ export default function HomePage() {
               </p>
               <ul className="pricing-list">
                 <li>
-                  <span className="pricing-check">&#10003;</span> One passage
-                  per day
-                </li>
-                <li>
                   <span className="pricing-check">&#10003;</span> Full public
                   domain library
                 </li>
@@ -660,19 +656,22 @@ export default function HomePage() {
                   reminders
                 </li>
                 <li>
+                  <span className="pricing-check">&#10003;</span> Monthly
+                  reading report
+                </li>
+                <li>
                   <span className="pricing-check">&#10003;</span> Bilingual
                   reading &mdash; first 3 pages per book
                 </li>
                 <li>
                   <span className="pricing-check">&#10003;</span> AI reading
-                  companion &mdash; 2 cards per day
-                </li>
-                <li className="disabled">
-                  <span className="pricing-check">&#10005;</span> Unlimited
-                  reading
+                  companion &mdash; 5 cards per day
                 </li>
                 <li className="disabled">
                   <span className="pricing-check">&#10005;</span> Offline access
+                </li>
+                <li className="disabled">
+                  <span className="pricing-check">&#10005;</span> Streak Freeze
                 </li>
               </ul>
             </div>
@@ -683,8 +682,8 @@ export default function HomePage() {
                 $3.99 <span>/ month</span>
               </p>
               <p className="pricing-card-desc">
-                For readers who want to go deeper. AI-powered insights,
-                unlimited reading, and more.
+                For readers who want to go deeper &mdash; full AI companion,
+                full bilingual, offline access, and more.
               </p>
               <ul className="pricing-list">
                 <li>
@@ -693,13 +692,8 @@ export default function HomePage() {
                 </li>
                 <li>
                   <span className="pricing-check">&#10003;</span>{' '}
-                  <strong>Unlimited reading</strong> &mdash; keep going past
-                  today&rsquo;s passage
-                </li>
-                <li>
-                  <span className="pricing-check">&#10003;</span>{' '}
-                  <strong>AI reading companion</strong> &mdash; character maps,
-                  recaps, context
+                  <strong>Unlimited AI companion</strong> &mdash; character
+                  maps, recaps, cultural context
                 </li>
                 <li>
                   <span className="pricing-check">&#10003;</span>{' '}
@@ -708,8 +702,8 @@ export default function HomePage() {
                 </li>
                 <li>
                   <span className="pricing-check">&#10003;</span>{' '}
-                  <strong>Bilingual reading</strong> &mdash; side-by-side
-                  original &amp; translation
+                  <strong>Full bilingual reading</strong> &mdash; side-by-side
+                  original &amp; translation, every page
                 </li>
                 <li>
                   <span className="pricing-check">&#10003;</span>{' '}

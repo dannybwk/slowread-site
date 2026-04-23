@@ -107,14 +107,14 @@ const jsonLd = [
         price: '0',
         priceCurrency: 'USD',
         name: '免費版',
-        description: '每日一段閱讀、完整公版書庫、閱讀連續紀錄、個人化排程、每日提醒。',
+        description: '完整公版書庫、閱讀連續紀錄、個人化排程、每日提醒、月度閱讀回顧、AI 伴讀（每日 5 張）、雙語前 3 頁體驗。',
       },
       {
         '@type': 'Offer',
         price: '3.99',
         priceCurrency: 'USD',
         name: 'Pro 進階版',
-        description: '無限閱讀、AI 伴讀助手、雙語對照閱讀、離線閱讀、年度閱讀報告。',
+        description: '無限 AI 伴讀、完整雙語對照、離線閱讀、連續凍結保護、年度閱讀報告。',
       },
     ],
     aggregateRating: {
@@ -188,7 +188,7 @@ const jsonLd = [
         name: 'SlowRead 是免費的嗎？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '是的，SlowRead 免費下載使用。免費版包含每日一段閱讀、完整公版書庫、閱讀連續紀錄、個人化排程和每日提醒。Pro 進階版每月 $3.99，解鎖雙語對照、AI 伴讀、無限閱讀等功能。',
+          text: '是的，SlowRead 免費下載使用。免費版包含完整公版書庫、閱讀連續紀錄、個人化排程、每日提醒、月度閱讀回顧，以及 AI 伴讀（每日 5 張）與雙語（前 3 頁）的免費體驗。Pro 進階版每月 $3.99，解鎖無限 AI 伴讀、完整雙語對照、離線閱讀、連續凍結與年度閱讀報告。',
         },
       },
       {
@@ -385,7 +385,7 @@ export default function ZhHomePage() {
           <h2 className="section-title reveal">AI 伴讀，陪你一起讀</h2>
           <div className="ai-content">
             <div className="ai-text reveal">
-              <span className="ai-badge">Pro 進階功能 &middot; 免費每日 2 張卡片</span>
+              <span className="ai-badge">Pro 進階功能 &middot; 免費每日 5 張卡片</span>
               <p>經典文學讓人半途而廢的兩大原因：<strong>「忘記前面演什麼了」</strong>和<strong>「看不懂這裡在說什麼」</strong>。</p>
               <p>SlowRead 的 AI 伴讀解決了這兩個痛點。每段閱讀後，它會為你回顧劇情、解釋文化典故、描繪人物關係——讓你永遠不會迷路。</p>
               <ul className="ai-features-list">
@@ -487,28 +487,27 @@ export default function ZhHomePage() {
               <p className="pricing-card-price">$0 <span>永久免費</span></p>
               <p className="pricing-card-desc">建立每日閱讀習慣所需的一切，搭配全球最偉大的文學作品。</p>
               <ul className="pricing-list">
-                <li><span className="pricing-check">&#10003;</span> 每日一段閱讀</li>
                 <li><span className="pricing-check">&#10003;</span> 完整公版書庫</li>
                 <li><span className="pricing-check">&#10003;</span> 閱讀連續紀錄與里程碑</li>
                 <li><span className="pricing-check">&#10003;</span> 個人化閱讀排程</li>
                 <li><span className="pricing-check">&#10003;</span> 每日閱讀提醒</li>
+                <li><span className="pricing-check">&#10003;</span> 月度閱讀回顧</li>
                 <li><span className="pricing-check">&#10003;</span> 雙語對照閱讀 —— 每本書前 3 頁免費體驗</li>
-                <li><span className="pricing-check">&#10003;</span> AI 伴讀助手 —— 每日 2 張免費卡片</li>
-                <li className="disabled"><span className="pricing-check">&#10005;</span> 無限閱讀</li>
+                <li><span className="pricing-check">&#10003;</span> AI 伴讀助手 —— 每日 5 張免費卡片</li>
                 <li className="disabled"><span className="pricing-check">&#10005;</span> 離線閱讀</li>
+                <li className="disabled"><span className="pricing-check">&#10005;</span> 連續凍結</li>
               </ul>
             </div>
             <div className="pricing-card featured reveal reveal-delay-2">
               <span className="pricing-card-badge">最受歡迎</span>
               <p className="pricing-card-name">Pro 進階版</p>
               <p className="pricing-card-price">$3.99 <span>/ 月</span></p>
-              <p className="pricing-card-desc">為想深入閱讀的讀者而生。AI 助手、無限閱讀，以及更多。</p>
+              <p className="pricing-card-desc">為想深入閱讀的讀者而生 —— 完整 AI 伴讀、完整雙語對照、離線閱讀，以及更多。</p>
               <ul className="pricing-list">
                 <li><span className="pricing-check">&#10003;</span> 包含免費版所有功能</li>
-                <li><span className="pricing-check">&#10003;</span> <strong>無限閱讀</strong> —— 看完今日段落，想繼續就繼續</li>
-                <li><span className="pricing-check">&#10003;</span> <strong>AI 伴讀助手</strong> —— 人物關係圖、前情提要、文化解析</li>
+                <li><span className="pricing-check">&#10003;</span> <strong>無限 AI 伴讀</strong> —— 人物關係圖、前情提要、文化解析</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>多語系 AI 回應</strong> —— 繁中、英文、日文、法文</li>
-                <li><span className="pricing-check">&#10003;</span> <strong>雙語對照閱讀</strong> —— 原文與譯文並排對照</li>
+                <li><span className="pricing-check">&#10003;</span> <strong>完整雙語對照</strong> —— 原文與譯文並排對照，所有頁面</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>離線閱讀</strong> —— 下載後在飛機上、通勤中也能讀</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>連續凍結</strong> —— 每月 2 次，守住你的連續紀錄</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>分享成就卡</strong> —— 將閱讀數據製成精美卡片分享</li>

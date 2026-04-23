@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: 'Is SlowRead free?',
-    a: 'Yes! SlowRead is completely free to download and use. The free plan includes one passage per day, the full public domain library, reading streaks, a personalized schedule, and daily reminders. The Pro plan ($3.99/month) adds unlimited reading, the AI reading companion, bilingual side-by-side reading, offline access, and more.',
+    a: 'Yes! SlowRead is completely free to download and use. The free plan includes the full public domain library, daily passages, reading streaks, a personalized schedule, daily reminders, a monthly reading report, an AI companion taste (5 cards/day), and a bilingual demo (first 3 pages per book). The Pro plan ($3.99/month) unlocks the unlimited AI companion, full bilingual reading, offline access, Streak Freeze, and the annual reading report.',
   },
   {
     q: 'What books are available?',
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: 'How does the AI reading companion work?',
-    a: 'The AI companion (Pro feature) solves the two biggest reasons people give up on classics: "I forgot what happened" and "I don\'t understand the context." After each passage, it provides plot recaps so you never lose track, character relationship maps that update as you read, and cultural context explainers for historical references. Free users can try 2 AI cards per day. It supports English, Chinese, Japanese, and French.',
+    a: 'The AI companion (Pro feature) solves the two biggest reasons people give up on classics: "I forgot what happened" and "I don\'t understand the context." After each passage, it provides plot recaps so you never lose track, character relationship maps that update as you read, and cultural context explainers for historical references. Free users can try 5 AI cards per day. It supports English, Chinese, Japanese, and French.',
   },
   {
     q: 'Does SlowRead support multiple languages?',
@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: 'Can I read more than one passage per day?',
-    a: 'With the free plan, you get one passage per day. With Pro, you can read as many passages as you want — keep going past today\'s passage whenever you\'re in the flow. Your schedule adjusts automatically to reflect your actual progress.',
+    a: 'Yes, any time. "One passage a day" is SlowRead\'s recommended rhythm — slow enough to absorb a classic, consistent enough to actually finish a 700-passage book. But nothing stops you from reading further if you\'re in the flow. This is true for both free and Pro. Your schedule adjusts automatically to reflect your actual progress.',
   },
   {
     q: 'Does SlowRead have ads?',

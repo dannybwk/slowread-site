@@ -107,14 +107,14 @@ const jsonLd = [
         price: '0',
         priceCurrency: 'USD',
         name: '無料',
-        description: '毎日一節の読書、パブリックドメイン全書庫、読書ストリーク、パーソナライズされたスケジュール、毎日のリマインダー。',
+        description: 'パブリックドメイン全書庫、読書ストリーク、パーソナライズされたスケジュール、毎日のリマインダー、月間読書レポート、AI伴読（毎日5枚）、バイリンガル（最初の3ページ）。',
       },
       {
         '@type': 'Offer',
         price: '3.99',
         priceCurrency: 'USD',
         name: 'Pro',
-        description: '無制限読書、AI読書パートナー、バイリンガル対訳、オフライン閲覧、年間読書レポート。',
+        description: '無制限AI伴読、完全バイリンガル対訳、オフライン閲覧、ストリークフリーズ、年間読書レポート。',
       },
     ],
     aggregateRating: {
@@ -188,7 +188,7 @@ const jsonLd = [
         name: 'SlowReadは無料ですか？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'はい、SlowReadは無料でダウンロード・利用できます。無料プランには、毎日一節の読書、パブリックドメイン全書庫、読書ストリーク、パーソナライズされたスケジュール、毎日のリマインダーが含まれます。Proプラン（月額$3.99）では、バイリンガル対訳、AI読書パートナー、無制限読書などが利用できます。',
+          text: 'はい、SlowReadは無料でダウンロード・利用できます。無料プランには、パブリックドメイン全書庫、読書ストリーク、パーソナライズされたスケジュール、毎日のリマインダー、月間読書レポート、そしてAI伴読（毎日5枚）とバイリンガル（最初の3ページ）のお試し体験が含まれます。Proプラン（月額$3.99）では、無制限AI伴読、完全バイリンガル対訳、オフライン閲覧、ストリークフリーズ、年間読書レポートが解放されます。',
         },
       },
       {
@@ -385,7 +385,7 @@ export default function JaHomePage() {
           <h2 className="section-title reveal">一緒に読むAIパートナー</h2>
           <div className="ai-content">
             <div className="ai-text reveal">
-              <span className="ai-badge">Pro機能 &middot; 無料で毎日2枚</span>
+              <span className="ai-badge">Pro機能 &middot; 無料で毎日5枚</span>
               <p>古典文学で挫折する理由は二つ：<strong>「前の話を忘れた」</strong>と<strong>「背景がわからない」</strong>。</p>
               <p>SlowReadのAIパートナーは両方を解決します。各節の後に、あらすじの振り返り、文化的背景の解説、人物関係の整理を提供——もう迷子にはなりません。</p>
               <ul className="ai-features-list">
@@ -487,28 +487,27 @@ export default function JaHomePage() {
               <p className="pricing-card-price">$0 <span>ずっと無料</span></p>
               <p className="pricing-card-desc">世界最高の文学作品で、毎日の読書習慣を作るために必要なすべて。</p>
               <ul className="pricing-list">
-                <li><span className="pricing-check">&#10003;</span> 毎日一節の読書</li>
                 <li><span className="pricing-check">&#10003;</span> パブリックドメイン全書庫</li>
                 <li><span className="pricing-check">&#10003;</span> 読書ストリーク＆マイルストーン</li>
                 <li><span className="pricing-check">&#10003;</span> パーソナライズされたスケジュール</li>
                 <li><span className="pricing-check">&#10003;</span> 毎日のリマインダー</li>
+                <li><span className="pricing-check">&#10003;</span> 月間読書レポート</li>
                 <li><span className="pricing-check">&#10003;</span> バイリンガル対訳 —— 各書籍の最初の3ページ</li>
-                <li><span className="pricing-check">&#10003;</span> AI読書パートナー —— 毎日2枚無料</li>
-                <li className="disabled"><span className="pricing-check">&#10005;</span> 無制限読書</li>
+                <li><span className="pricing-check">&#10003;</span> AI読書パートナー —— 毎日5枚無料</li>
                 <li className="disabled"><span className="pricing-check">&#10005;</span> オフライン閲覧</li>
+                <li className="disabled"><span className="pricing-check">&#10005;</span> ストリークフリーズ</li>
               </ul>
             </div>
             <div className="pricing-card featured reveal reveal-delay-2">
               <span className="pricing-card-badge">一番人気</span>
               <p className="pricing-card-name">Pro</p>
               <p className="pricing-card-price">$3.99 <span>/ 月</span></p>
-              <p className="pricing-card-desc">より深く読みたい読書家のために。AI機能、無制限読書、その他多数。</p>
+              <p className="pricing-card-desc">より深く読みたい読書家のために —— 無制限AI伴読、完全バイリンガル対訳、オフライン閲覧、その他多数。</p>
               <ul className="pricing-list">
                 <li><span className="pricing-check">&#10003;</span> 無料プランのすべての機能</li>
-                <li><span className="pricing-check">&#10003;</span> <strong>無制限読書</strong> —— 今日の一節を超えて読み進める</li>
-                <li><span className="pricing-check">&#10003;</span> <strong>AI読書パートナー</strong> —— 人物関係図、あらすじ、文化解説</li>
+                <li><span className="pricing-check">&#10003;</span> <strong>無制限AI伴読</strong> —— 人物関係図、あらすじ、文化解説</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>多言語AI対応</strong> —— 日本語、英語、中国語、フランス語</li>
-                <li><span className="pricing-check">&#10003;</span> <strong>バイリンガル対訳</strong> —— 原文と翻訳を並べて読む</li>
+                <li><span className="pricing-check">&#10003;</span> <strong>完全バイリンガル対訳</strong> —— 原文と翻訳を並べて、全ページ</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>オフライン閲覧</strong> —— ダウンロードして飛行機や通勤中にも</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>ストリークフリーズ</strong> —— 月2回、ストリークを守る</li>
                 <li><span className="pricing-check">&#10003;</span> <strong>達成カードの共有</strong> —— 読書データを美しいカードでシェア</li>
