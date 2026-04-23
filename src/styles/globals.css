@@ -1712,3 +1712,26 @@ img {
   color: var(--text-primary);
   user-select: none;
 }
+
+/* ----------------------------------------------------------
+   Container horizontal padding — enforcement override.
+   Section-level rules (.manifesto, .legal, .post, etc.) use
+   the `padding` shorthand with `0` in the horizontal slots,
+   which silently overrides `.container`'s horizontal padding
+   because both selectors have equal specificity. This final
+   rule re-asserts horizontal padding via the logical
+   `padding-inline` property so text never hits the viewport
+   edge on mobile — regardless of which section class wraps
+   the container.
+   ---------------------------------------------------------- */
+.container,
+.container-wide {
+  padding-inline: var(--spacing-md);
+}
+
+@media (max-width: 480px) {
+  .container,
+  .container-wide {
+    padding-inline: 1.25rem;
+  }
+}
