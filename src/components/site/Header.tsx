@@ -15,6 +15,7 @@ export default function Header({ lang }: HeaderProps) {
           </a>
           <nav>
             <ul className="nav-links">
+              <li><a href="/ja/blog">読書ノート</a></li>
               <li><a href="/ja/privacy">プライバシーポリシー</a></li>
               <li><a href="/ja/terms">利用規約</a></li>
               <li className="lang-switch">
@@ -37,6 +38,7 @@ export default function Header({ lang }: HeaderProps) {
           </a>
           <nav>
             <ul className="nav-links">
+              <li><a href="/zh/blog">慢讀筆記</a></li>
               <li><a href="/zh/privacy">隱私權政策</a></li>
               <li><a href="/zh/terms">使用條款</a></li>
               <li className="lang-switch">
@@ -58,6 +60,7 @@ export default function Header({ lang }: HeaderProps) {
           </a>
         <nav>
           <ul className="nav-links">
+            <li><a href="/blog">Journal</a></li>
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/terms">Terms</a></li>
             <li className="lang-switch">
