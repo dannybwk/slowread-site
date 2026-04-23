@@ -9,9 +9,10 @@ export default function Footer({ lang }: FooterProps) {
         <div className="container">
           <div className="footer-content">
             <ul className="footer-links">
+              <li><a href="/ja/blog">読書ノート</a></li>
+              <li><a href="/ja/faq">よくある質問</a></li>
               <li><a href="/ja/privacy">プライバシーポリシー</a></li>
               <li><a href="/ja/terms">利用規約</a></li>
-              <li><a href="/ja/faq">よくある質問</a></li>
               <li><a href="mailto:tplusstudio@gmail.com">お問い合わせ</a></li>
             </ul>
             <span className="footer-copy">&copy; 2026 SlowRead</span>
@@ -27,9 +28,10 @@ export default function Footer({ lang }: FooterProps) {
         <div className="container">
           <div className="footer-content">
             <ul className="footer-links">
+              <li><a href="/zh/blog">慢讀筆記</a></li>
+              <li><a href="/zh/faq">常見問題</a></li>
               <li><a href="/zh/privacy">隱私權政策</a></li>
               <li><a href="/zh/terms">使用條款</a></li>
-              <li><a href="/zh/faq">常見問題</a></li>
               <li><a href="mailto:tplusstudio@gmail.com">聯絡我們</a></li>
             </ul>
             <span className="footer-copy">&copy; 2026 SlowRead 慢讀經典</span>
@@ -44,9 +46,10 @@ export default function Footer({ lang }: FooterProps) {
       <div className="container">
         <div className="footer-content">
           <ul className="footer-links">
+            <li><a href="/blog">Journal</a></li>
+            <li><a href="/faq">FAQ</a></li>
             <li><a href="/privacy">Privacy Policy</a></li>
             <li><a href="/terms">Terms of Service</a></li>
-            <li><a href="/faq">FAQ</a></li>
             <li><a href="mailto:tplusstudio@gmail.com">Support</a></li>
           </ul>
           <span className="footer-copy">&copy; 2026 SlowRead</span>

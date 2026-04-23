@@ -64,5 +64,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       alternates: { languages: { en: `${BASE}/faq`, 'zh-Hant': `${BASE}/zh/faq` } },
     },
+    {
+      url: `${BASE}/blog`,
+      lastModified: new Date(),
+      alternates: { languages: { 'zh-Hant': `${BASE}/zh/blog`, ja: `${BASE}/ja/blog` } },
+    },
+    {
+      url: `${BASE}/zh/blog`,
+      lastModified: new Date(),
+      alternates: { languages: { en: `${BASE}/blog`, ja: `${BASE}/ja/blog` } },
+    },
+    {
+      url: `${BASE}/ja/blog`,
+      lastModified: new Date(),
+      alternates: { languages: { en: `${BASE}/blog`, 'zh-Hant': `${BASE}/zh/blog` } },
+    },
+    {
+      url: `${BASE}/blog/how-to-read-meditations-daily`,
+      lastModified: new Date('2026-04-23'),
+    },
+    {
+      url: `${BASE}/zh/blog/hong-lou-meng-262-days`,
+      lastModified: new Date('2026-04-23'),
+    },
+    {
+      url: `${BASE}/ja/blog/kokoro-slow-reading`,
+      lastModified: new Date('2026-04-23'),
+    },
   ];
 }
