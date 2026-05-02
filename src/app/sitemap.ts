@@ -65,6 +65,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: { en: `${BASE}/faq`, 'zh-Hant': `${BASE}/zh/faq` } },
     },
     {
+      url: `${BASE}/delete-account`,
+      lastModified: new Date(),
+      alternates: { languages: { 'zh-Hant': `${BASE}/zh/delete-account`, ja: `${BASE}/ja/delete-account` } },
+    },
+    {
+      url: `${BASE}/zh/delete-account`,
+      lastModified: new Date(),
+      alternates: { languages: { en: `${BASE}/delete-account`, ja: `${BASE}/ja/delete-account` } },
+    },
+    {
+      url: `${BASE}/ja/delete-account`,
+      lastModified: new Date(),
+      alternates: { languages: { en: `${BASE}/delete-account`, 'zh-Hant': `${BASE}/zh/delete-account` } },
+    },
+    {
       url: `${BASE}/blog`,
       lastModified: new Date(),
       alternates: { languages: { 'zh-Hant': `${BASE}/zh/blog`, ja: `${BASE}/ja/blog` } },
