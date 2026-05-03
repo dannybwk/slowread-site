@@ -3,6 +3,8 @@ import { headers } from 'next/headers';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Reset Password',
   description: 'Reset your SlowRead account password.',

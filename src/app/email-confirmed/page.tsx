@@ -3,6 +3,10 @@ import { headers } from 'next/headers';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 
+// Force dynamic rendering so we read Accept-Language fresh on every request
+// instead of serving a statically-generated (locale-frozen) cached page.
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Email Confirmed',
   description: 'Your SlowRead email address has been confirmed.',
