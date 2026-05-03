@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 
@@ -11,50 +12,107 @@ export const metadata: Metadata = {
   },
 };
 
-export default function EmailConfirmedPage() {
-  // Auto-attempt deep link on page load. If the user's browser supports
-  // opening custom schemes (Safari, Chrome, etc.), this jumps them straight
-  // back to the app. Gmail's in-app browser blocks this, in which case the
-  // user just sees the static instructions below — no error, no popup.
+type Locale = 'en' | 'zh' | 'ja';
+
+const COPY: Record<Locale, {
+  title: string;
+  body: string;
+  buttonHint: string;
+  fallback: string;
+}> = {
+  en: {
+    title: 'Email Confirmed',
+    body: 'Your email address has been verified. Please return to the SlowRead app to sign in.',
+    buttonHint: 'Open SlowRead',
+    fallback:
+      'If this page was opened from inside the Gmail app, the button may not work due to browser restrictions — please exit Gmail and open the SlowRead app manually.',
+  },
+  zh: {
+    title: '電子郵件已確認',
+    body: '你的電子郵件已驗證成功，請回到 SlowRead app 登入。',
+    buttonHint: '打開 SlowRead',
+    fallback:
+      '如果這頁是從 Gmail app 內開啟，按鈕可能因瀏覽器限制無法運作 — 請退出 Gmail，手動回到 SlowRead app。',
+  },
+  ja: {
+    title: 'メールアドレスが確認されました',
+    body: 'メールアドレスの認証に成功しました。SlowRead アプリに戻ってサインインしてください。',
+    buttonHint: 'SlowRead を開く',
+    fallback:
+      'このページが Gmail アプリ内で開かれた場合、ブラウザの制限によりボタンが動作しないことがあります — Gmail を閉じて、SlowRead アプリを手動で開いてください。',
+  },
+};
+
+function pickLocale(acceptLanguage: string | null): Locale {
+  if (!acceptLanguage) return 'en';
+  // Walk through the prioritized list (Accept-Language q-values are already
+  // sorted by browsers in priority order in practice).
+  const tags = acceptLanguage
+    .toLowerCase()
+    .split(',')
+    .map((t) => t.split(';')[0]?.trim() || '')
+    .filter(Boolean);
+  for (const tag of tags) {
+    if (tag.startsWith('zh')) return 'zh';
+    if (tag.startsWith('ja')) return 'ja';
+    if (tag.startsWith('en')) return 'en';
+  }
+  return 'en';
+}
+
+function orderLocales(primary: Locale): Locale[] {
+  // Show primary first, then a stable order for the rest so users can scan
+  // for their language even if the primary detection was wrong.
+  const rest = (['en', 'zh', 'ja'] as Locale[]).filter((l) => l !== primary);
+  return [primary, ...rest];
+}
+
+export default async function EmailConfirmedPage() {
+  const h = await headers();
+  const primary = pickLocale(h.get('accept-language'));
+  const order = orderLocales(primary);
+
   const autoOpenScript = `
     (function() {
       try {
-        // Only try once per page load
         if (sessionStorage.getItem('sr_dl_tried')) return;
         sessionStorage.setItem('sr_dl_tried', '1');
-        // Slight delay so the page renders before we try
-        setTimeout(function() {
-          window.location.href = 'slowread://';
-        }, 600);
+        setTimeout(function() { window.location.href = 'slowread://'; }, 600);
       } catch(e) {}
     })();
   `;
 
   return (
     <>
-      <Header lang="en" />
+      <Header lang={primary === 'zh' ? 'zh' : primary === 'ja' ? 'ja' : 'en'} />
 
       <main className="legal container" style={{ textAlign: 'center', paddingTop: '4rem' }}>
         <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✓</div>
 
-        <h1>Email Confirmed</h1>
-        <p style={{ fontSize: '1.1rem', color: '#555' }}>
-          Your email address has been verified. Please return to the SlowRead app to sign in.
-        </p>
-
-        <hr style={{ border: 'none', borderTop: '1px solid #ddd', margin: '2.5rem auto', maxWidth: '320px' }} />
-
-        <h2 style={{ fontSize: '1.5rem' }}>電子郵件已確認</h2>
-        <p style={{ fontSize: '1.1rem', color: '#555' }}>
-          你的電子郵件已驗證成功，請回到 SlowRead app 登入。
-        </p>
-
-        <hr style={{ border: 'none', borderTop: '1px solid #ddd', margin: '2.5rem auto', maxWidth: '320px' }} />
-
-        <h2 style={{ fontSize: '1.5rem' }}>メールアドレスが確認されました</h2>
-        <p style={{ fontSize: '1.1rem', color: '#555' }}>
-          メールアドレスの認証に成功しました。SlowRead アプリに戻ってサインインしてください。
-        </p>
+        {order.map((loc, i) => {
+          const c = COPY[loc];
+          const isPrimary = i === 0;
+          return (
+            <div
+              key={loc}
+              style={{
+                marginTop: i === 0 ? 0 : '2.5rem',
+                paddingTop: i === 0 ? 0 : '2rem',
+                borderTop: i === 0 ? 'none' : '1px solid #ddd',
+                opacity: isPrimary ? 1 : 0.85,
+              }}
+            >
+              {isPrimary ? (
+                <h1 style={{ fontSize: '2rem' }}>{c.title}</h1>
+              ) : (
+                <h2 style={{ fontSize: '1.4rem' }}>{c.title}</h2>
+              )}
+              <p style={{ fontSize: isPrimary ? '1.15rem' : '1rem', color: '#555', maxWidth: '32rem', margin: '0.5rem auto' }}>
+                {c.body}
+              </p>
+            </div>
+          );
+        })}
 
         <p style={{ marginTop: '2.5rem' }}>
           <a
@@ -69,24 +127,17 @@ export default function EmailConfirmedPage() {
               fontWeight: 500,
             }}
           >
-            Open SlowRead / 打開 SlowRead / SlowRead を開く
+            {COPY[primary].buttonHint}
           </a>
         </p>
 
-        <p style={{ color: '#888', fontSize: '0.9rem', marginTop: '1rem', lineHeight: 1.7 }}>
-          If this page was opened from inside the Gmail app, the button may not work due to
-          browser restrictions — please exit Gmail and open the SlowRead app manually.
-          <br /><br />
-          如果這頁是從 Gmail app 內開啟，按鈕可能因瀏覽器限制無法運作 — 請退出 Gmail，手動回到 SlowRead app。
-          <br /><br />
-          このページが Gmail アプリ内で開かれた場合、ブラウザの制限によりボタンが動作しないことがあります —
-          Gmail を閉じて、SlowRead アプリを手動で開いてください。
+        <p style={{ color: '#888', fontSize: '0.9rem', marginTop: '1rem', maxWidth: '36rem', margin: '1rem auto 0', lineHeight: 1.7 }}>
+          {COPY[primary].fallback}
         </p>
       </main>
 
-      <Footer lang="en" />
+      <Footer lang={primary === 'zh' ? 'zh' : primary === 'ja' ? 'ja' : 'en'} />
 
-      {/* Auto-attempt deep link (silently fails in Gmail webview) */}
       <script dangerouslySetInnerHTML={{ __html: autoOpenScript }} />
     </>
   );
