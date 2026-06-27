@@ -27,6 +27,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'roshi-tao-te-ching',
+    title: '『老子（道徳経）』を一日一章、81日で読む',
+    excerpt:
+      '『老子』は一時間で読み終わる——それが罠だ。世界でいちばん短い名著は、いちばん読み損ねやすい。一日一章、81日で本当に読み切るための計画。',
+    date: '2026-06-27',
+    readingTime: '8分で読めます',
+    book: '道徳経',
+  },
+  {
     slug: 'kokoro-slow-reading',
     title: '『こころ』をゆっくり読む — 83日で読む夏目漱石',
     excerpt:

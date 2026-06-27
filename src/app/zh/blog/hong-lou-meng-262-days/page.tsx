@@ -236,6 +236,26 @@ export default function HongLouMengArticle() {
             </div>
           </div>
 
+          <div className="related-posts">
+            <h3>延伸閱讀</h3>
+            <div className="blog-list">
+              <a href="/zh/blog/dao-de-jing-81-days" className="blog-card">
+                <div className="blog-card-meta">
+                  <span>道德經</span>
+                  <span className="post-meta-dot" />
+                  <span>8 分鐘閱讀</span>
+                </div>
+                <h2 className="blog-card-title">
+                  讀《道德經》：一天一章，81 天讀完老子
+                </h2>
+                <p className="blog-card-excerpt">
+                  全世界最短的偉大著作，也最容易被讀壞——每天一章、81
+                  天讀完老子，以及那些被引爛卻被誤解的句子。
+                </p>
+              </a>
+            </div>
+          </div>
+
           <a href="/zh/blog" className="post-back">
             &larr; 回到慢讀筆記
           </a>

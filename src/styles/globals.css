@@ -1174,6 +1174,23 @@ img {
   letter-spacing: 0.08em;
 }
 
+/* ---------- Related posts (internal linking) ---------- */
+.related-posts {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-light);
+}
+
+.related-posts h3 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
 @media (max-width: 640px) {
   .post h1 {
     font-size: 1.8rem;

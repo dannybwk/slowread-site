@@ -27,6 +27,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'dao-de-jing-81-days',
+    title: '讀《道德經》：一天一章，81 天讀完老子',
+    excerpt:
+      '《道德經》一個小時就能讀完——這正是它的陷阱。全世界最短的偉大著作，也最容易被讀壞。這篇告訴你：怎麼用每天一章、81 天真正讀進老子。',
+    date: '2026-06-27',
+    readingTime: '8 分鐘閱讀',
+    book: '道德經',
+  },
+  {
     slug: 'hong-lou-meng-262-days',
     title: '讀完《紅樓夢》需要多久？一份 262 天的慢讀計畫',
     excerpt:

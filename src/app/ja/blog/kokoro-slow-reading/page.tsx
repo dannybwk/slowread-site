@@ -220,6 +220,25 @@ export default function KokoroArticle() {
             </div>
           </div>
 
+          <div className="related-posts">
+            <h3>あわせて読む</h3>
+            <div className="blog-list">
+              <a href="/ja/blog/roshi-tao-te-ching" className="blog-card">
+                <div className="blog-card-meta">
+                  <span>道徳経</span>
+                  <span className="post-meta-dot" />
+                  <span>8分で読めます</span>
+                </div>
+                <h2 className="blog-card-title">
+                  『老子（道徳経）』を一日一章、81日で読む
+                </h2>
+                <p className="blog-card-excerpt">
+                  世界でいちばん短い名著で、いちばん読み損ねやすい一冊——一日一章、81日で読む老子と、誤解され尽くした言葉。
+                </p>
+              </a>
+            </div>
+          </div>
+
           <a href="/ja/blog" className="post-back">
             &larr; 読書ノートに戻る
           </a>

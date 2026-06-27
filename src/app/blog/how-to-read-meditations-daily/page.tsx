@@ -311,6 +311,27 @@ export default function MeditationsArticle() {
             </div>
           </div>
 
+          <div className="related-posts">
+            <h3>Related reading</h3>
+            <div className="blog-list">
+              <a href="/blog/how-to-read-tao-te-ching" className="blog-card">
+                <div className="blog-card-meta">
+                  <span>Tao Te Ching</span>
+                  <span className="post-meta-dot" />
+                  <span>8 min read</span>
+                </div>
+                <h2 className="blog-card-title">
+                  How to Read the Tao Te Ching One Verse a Day
+                </h2>
+                <p className="blog-card-excerpt">
+                  The shortest great book in the world, and the easiest to read
+                  badly &mdash; an 81-day plan for Laozi, one chapter each
+                  morning.
+                </p>
+              </a>
+            </div>
+          </div>
+
           <a href="/blog" className="post-back">
             &larr; Back to the Journal
           </a>

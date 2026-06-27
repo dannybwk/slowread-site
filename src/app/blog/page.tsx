@@ -26,6 +26,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'how-to-read-tao-te-ching',
+    title: 'How to Read the Tao Te Ching One Verse a Day',
+    excerpt:
+      'You can read the entire Tao Te Ching in an hour. That is the trap. The shortest great book in the world is the easiest to read badly — here is the 81-day way to read it instead.',
+    date: '2026-06-27',
+    readingTime: '8 min read',
+    book: 'Tao Te Ching',
+  },
+  {
     slug: 'how-to-read-meditations-daily',
     title: 'How to Read Meditations in 20 Minutes a Day',
     excerpt:
