@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     q: 'Is SlowRead available on Android?',
-    a: 'SlowRead is currently available on iOS via the App Store. An Android version is planned for the future. You can visit slowread.xyz to stay updated on availability.',
+    a: 'Yes. SlowRead is available on both iOS (via the App Store) and Android (via Google Play).',
   },
   {
     q: 'How is SlowRead different from book summary apps?',

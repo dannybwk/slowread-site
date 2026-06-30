@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: 'SlowRead 有 Android 版嗎？',
-    a: 'SlowRead 目前在 iOS App Store 上架。Android 版本正在規劃中。你可以訪問 slowread.xyz 獲取最新消息。',
+    a: '有的。SlowRead 同時支援 iOS（App Store）與 Android（Google Play），兩個平台都可以下載。',
   },
   {
     q: 'SlowRead 跟書摘 App 有什麼不同？',

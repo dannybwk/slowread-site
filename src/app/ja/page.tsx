@@ -47,10 +47,10 @@ function StoreButtons() {
         <AppleSvg />
         App Store
       </a>
-      <span className="store-btn" aria-disabled="true">
+      <a href="https://play.google.com/store/apps/details?id=com.slowread.app" className="store-btn">
         <GooglePlaySvg />
         Google Play
-      </span>
+      </a>
     </div>
   );
 }
@@ -85,6 +85,7 @@ const jsonLd = [
     logo: 'https://slowread.xyz/images/slowread-logo.png',
     sameAs: [
       'https://apps.apple.com/app/id6759947443',
+      'https://play.google.com/store/apps/details?id=com.slowread.app',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -97,7 +98,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'SlowRead',
-    operatingSystem: 'iOS',
+    operatingSystem: 'iOS, Android',
     applicationCategory: 'EducationApplication',
     description:
       '毎日一節の古典文学。AI読書パートナー、バイリンガル対訳、スマートスケジュール、読書ストリーク。',
@@ -156,7 +157,7 @@ const jsonLd = [
     totalTime: 'PT5M',
     tool: {
       '@type': 'HowToTool',
-      name: 'SlowRead App (iOS)',
+      name: 'SlowRead App',
     },
   },
   {
@@ -236,7 +237,7 @@ const jsonLd = [
         name: 'SlowReadはAndroidで使えますか？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'SlowReadは現在iOS App Storeで公開中です。Android版は将来リリース予定です。最新情報をお楽しみに。',
+          text: 'はい。SlowReadはiOS（App Store）とAndroid（Google Play）の両方でご利用いただけます。',
         },
       },
     ],
