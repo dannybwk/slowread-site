@@ -46,10 +46,10 @@ function StoreButtons() {
         <AppleSvg />
         App Store
       </a>
-      <span className="store-btn" aria-disabled="true">
+      <a href="https://play.google.com/store/apps/details?id=com.slowread.app" className="store-btn">
         <GooglePlaySvg />
         Google Play
-      </span>
+      </a>
     </div>
   );
 }
@@ -89,6 +89,7 @@ const jsonLd = [
     logo: 'https://slowread.xyz/images/slowread-logo.png',
     sameAs: [
       'https://apps.apple.com/app/id6759947443',
+      'https://play.google.com/store/apps/details?id=com.slowread.app',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -101,7 +102,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'SlowRead',
-    operatingSystem: 'iOS',
+    operatingSystem: 'iOS, Android',
     applicationCategory: 'EducationApplication',
     description:
       'Daily passages from classic literature with AI-powered reading companion. Bilingual reading, smart scheduling, and reading streaks.',
@@ -161,7 +162,7 @@ const jsonLd = [
     totalTime: 'PT5M',
     tool: {
       '@type': 'HowToTool',
-      name: 'SlowRead app (iOS)',
+      name: 'SlowRead app',
     },
   },
   {
@@ -241,7 +242,7 @@ const jsonLd = [
         name: 'Is SlowRead available on Android?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'SlowRead is currently available on iOS via the App Store. An Android version is planned for the future. Stay tuned for updates.',
+          text: 'Yes. SlowRead is available on both iOS (via the App Store) and Android (via Google Play).',
         },
       },
     ],

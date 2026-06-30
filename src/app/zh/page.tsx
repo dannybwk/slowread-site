@@ -47,10 +47,10 @@ function StoreButtons() {
         <AppleSvg />
         App Store
       </a>
-      <span className="store-btn" aria-disabled="true">
+      <a href="https://play.google.com/store/apps/details?id=com.slowread.app" className="store-btn">
         <GooglePlaySvg />
         Google Play
-      </span>
+      </a>
     </div>
   );
 }
@@ -85,6 +85,7 @@ const jsonLd = [
     logo: 'https://slowread.xyz/images/slowread-logo.png',
     sameAs: [
       'https://apps.apple.com/app/id6759947443',
+      'https://play.google.com/store/apps/details?id=com.slowread.app',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -97,7 +98,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'SlowRead 慢讀經典',
-    operatingSystem: 'iOS',
+    operatingSystem: 'iOS, Android',
     applicationCategory: 'EducationApplication',
     description:
       '每日一段經典文學選讀，AI 伴讀助手、雙語對照閱讀、智慧排程，讓深度閱讀成為日常習慣。',
@@ -156,7 +157,7 @@ const jsonLd = [
     totalTime: 'PT5M',
     tool: {
       '@type': 'HowToTool',
-      name: 'SlowRead App (iOS)',
+      name: 'SlowRead App',
     },
   },
   {
@@ -236,7 +237,7 @@ const jsonLd = [
         name: 'SlowRead 有 Android 版嗎？',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'SlowRead 目前在 iOS App Store 上架。Android 版本正在規劃中，敬請期待。',
+          text: '有的。SlowRead 同時支援 iOS（App Store）與 Android（Google Play），兩個平台都可以下載。',
         },
       },
     ],

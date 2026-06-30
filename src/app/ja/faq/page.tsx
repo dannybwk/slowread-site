@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: 'SlowReadはAndroidで使えますか？',
-    a: 'SlowReadは現在iOS App Storeで公開中です。Android版は将来リリース予定です。slowread.xyzで最新情報をご確認ください。',
+    a: 'はい。SlowReadはiOS（App Store）とAndroid（Google Play）の両方でご利用いただけます。',
   },
   {
     q: 'SlowReadと要約アプリの違いは？',
